@@ -1,41 +1,24 @@
- > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
- > Prompt text is any lines beginning with "\<"
- > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
 # Wavez
- > Your author list below should include links to all members GitHub and should begin with a "\<" (remove existing author).
- 
- > Authors: 
- Kobe Braga (https://github.com/kobe-cb), 
- Zergio Ruvalcaba (https://github.com/Zorten), 
- Christopher De Santiago(https://github.com/Chrisdes-99)  
- 
- > You will be forming a group of **THREE** students and work on an interesting project that you will propose yourself (in this `README.md` document). You can pick any project that you'd like, but it needs ot implement three design patterns. Each of the members in a group is expected to work on at least one design pattern and its test cases. You can, of course, help each other, but it needs to be clear who will be responsible for which pattern and for which general project features.
- 
- > ## Expectations
- > * Incorporate **three** distinct design patterns, *two* of the design patterns need to be taught in this course:
- >   * Composite, Strategy, Abstract Factory, Visitor
- > * All three design patterns need to be linked together (it can't be three distinct projects)
- > * Your project should be implemented in C/C++. If you wish to choose anoher programming language (e.g. Java, Python), please discuss with your lab TA to obtain permission.
- > * You can incorporate additional technologies/tools but they must be approved (in writing) by the instructor or the TA.
- > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
 
+ ## Authors 
+ >#### Kobe Braga (https://github.com/kobe-cb), 
+ >#### Zergio Ruvalcaba (https://github.com/Zorten), 
+ >#### Christopher De Santiago(https://github.com/Chrisdes-99)  
+ 
 ## Project Description
- > Your project description should summarize the project you are proposing. Be sure to include
- > * Why is it important or interesting to you?
-Everyone likes music, everyone has their own differing opinions about music, and critics are overrated. Wavez is a program where you can make an account and go and rate music and share your own thoughts on it, and then share that with your friends, or see what they have to say about whatever music they listen to. We found this interesting because it’s something that would be fun to make and (as far as we know) there’s not something like it out there. 
- > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
+ > ### Why is it important or interesting to you?
+>Everyone likes music, everyone has their own differing opinions about music, and critics are overrated. Wavez is a program where you can make an account and go and rate music and share your own thoughts on it, and then share that with your friends, or see what they have to say about whatever music they listen to. We found this interesting because it’s something that would be fun to make and (as far as we know) there’s not something like it out there. 
+ > ### What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
  >   * C++
  >   * Unit Testing
  >   * Valgrind
- > * What will be the input/output of your project?
- Input will consist of ratings (on a five star scale), reviews, comments, lists to listen to, likes and favorites. Output will consist of display of such reviews and ratings,  most liked/reviewed items.
- > * What are the three design patterns you will be using. For each design pattern you must:
- >   * Explain in 3 - 5 sentences why you picked this pattern and what feature you will implement with it
- > * This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
-* Design Pattern 1: Strategy, a behavioral pattern, was chosen due to how we implement our functions. In this case, we can specify a 
+ > ### What will be the input/output of your project?
+>* Input will consist of ratings (on a five star scale), reviews, comments, lists to listen to, likes and favorites. >* Output will consist of display of such reviews and ratings,  most liked/reviewed items.
+ > ### What are the three design patterns you will be using.
+>* Design Pattern 1: Strategy, a behavioral pattern, was chosen due to how we implement our functions. In this case, we can specify a 
 “scan()” function that will do a scan based on what object the scan was called on. For example, if we called a scan and it had to do with music reviews, it’ll go to the scan from the reviews and not use the scan from the rating system. In each encapsulated scan(), we’ll impose different algorithms that work best for the objects that it deals with.
-* Design Pattern 2: Composite, a structural pattern was chosen because we will have different songs/albums that the user can review. We can treat the song or album as an object that will have more objects in the form of more paths like reviews, song information, etc.  Therefore, Composite helps us manage this hierarchy of objects, and users don’t have to worry about the distinction between these objects. 
-* Design Pattern 3: Facade, a structural pattern, was chosen due to how it allows us to hide the complexities of our system to the users. This allows us to give the user a higher-level simple interface that doesn’t overwhelm the user compared to as if we give them access to the subset systems too. Implementation wise, we are considering having a “main menu” where it’ll house all of our operations under simple commands for the user.
+>* Design Pattern 2: Composite, a structural pattern was chosen because we will have different songs/albums that the user can review. We can treat the song or album as an object that will have more objects in the form of more paths like reviews, song information, etc.  Therefore, Composite helps us manage this hierarchy of objects, and users don’t have to worry about the distinction between these objects. 
+>* Design Pattern 3: Facade, a structural pattern, was chosen due to how it allows us to hide the complexities of our system to the users. This allows us to give the user a higher-level simple interface that doesn’t overwhelm the user compared to as if we give them access to the subset systems too. Implementation wise, we are considering having a “main menu” where it’ll house all of our operations under simple commands for the user.
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
