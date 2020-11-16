@@ -7,7 +7,7 @@
  
 ## Project Description
   #### Why is it important or interesting to you?
-- Everyone likes music, everyone has their own differing opinions about music, and critics are overrated. Wavez is a program where you can make an account and go and rate music and share your own thoughts on it, and then share that with your friends, or see what they have to say about whatever music they listen to. We found this interesting because it’s something that would be fun to make and (as far as we know) there’s not something like it out there. 
+- Everyone likes music, everyone has their own differing opinions about music, and critics are overrated. Wavez is a program where you can either sign up or log in as a registered user and then go and rate music on a 0-5 scale and/or share your own thoughts on it with a review! Other users can then see what you have said, or you can see what they have to say about whatever music they listen to. You can search for artists, albums, or songs with existing ratings and/or reviews, and then you can choose to display all of the ratings/reviews for them. We found this interesting because it’s something that would be fun to make and (as far as we know) there’s not something like it out there. 
 
 #### What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
    - C++
@@ -15,7 +15,7 @@
    - Valgrind
    
 #### What will be the input/output of your project?
-- Input will consist of ratings (on a five star scale), reviews, comments, lists to listen to, likes and favorites. >* Output will consist of display of such reviews and ratings,  most liked/reviewed items.
+- Input will consist of ratings (on a five star scale) or reviews >* Output will consist of display of such reviews and ratings.
 
 #### What are the three design patterns you will be using.
 - Design Pattern 1: Strategy, a behavioral pattern, was chosen due to how we implement our functions. In this case, we can specify a 
