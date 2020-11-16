@@ -44,6 +44,9 @@
  >   - Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
  >   - Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
  >   - What tasks you are planning for this next sprint.
+  Facade Pattern (Kobe): 
+ ![image](./images/Facade.png)
+  Strategy Pattern (Zergio): 
  ![image](./images/Strategy.png)
 
  > ## Final deliverable
