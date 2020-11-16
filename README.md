@@ -29,7 +29,7 @@
    
  ![image](./images/Facade.png)
  
- Strategy Pattern (Zergio): 
+ Strategy Pattern (Zergio): This pattern encapsulates searching algorithms in order to implement the search feature for artists, albums, and songs.
   
  ![image](./images/Strategy.png)
  
