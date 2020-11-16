@@ -33,7 +33,7 @@
   
  ![image](./images/Strategy.png)
  
- Composite Pattern (Chris):
+ Composite Pattern (Chris): This pattern is intended for multiple subclasses to use the same functionality for similar uses from a Base Class
   
   ![image](./images/Composite.png)
  
