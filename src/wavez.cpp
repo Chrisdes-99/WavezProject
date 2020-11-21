@@ -79,7 +79,7 @@ void Wavez::run(){
     string cont;
     int loop = 0;
     while (loop == 0){
-        display();
+        displayMenu();
         cout << "Choose an action: ";
         cin >> cont;
         cout << endl;
@@ -100,9 +100,30 @@ void Wavez::run(){
             }
         }
         else if ((cont == "N") || (cont == "n")){
-            addReview();
+	    cout << "Artist(1); Album(2); Song(3)" << endl;
+	    int choice;
+	    cin >>choice;
+	//Make it so that each option creates an instance of that object and calls that obj's addReview function.
+	//Before creating new obj, make sure to search if it already exists, if so just add the review to a vector within that obj
+	    if (choice == 1){
+	    	//implement artist
+	    	addReview();
+	    }
+	    else if (choice == 2){
+		//implement album
+		addReview();
+	    }
+	    else if (choice == 3){
+		//implement song
+		addReview();
+	    }
+	    else{
+		cout << "Not a valid input. Try again." << endl;
+		//implement loop so it tries again
+		addReview();
+	    }
         }
-	else if ((cont == "S" || (cont == "s")){
+	else if ((cont == "S") || (cont == "s")){
 		cout << "Implement search() function" << endl;
 	}
         else if ((cont == "Q") || (cont == "q")){
@@ -112,26 +133,34 @@ void Wavez::run(){
     }
 }
 
-void Wavez::display() const{
+void Wavez::displayMenu() const{
     cout << "Menu" << endl;
-    cout << "- Display Reviews (\'D\' or \'d\')" << endl;
+    cout << "- Display All Reviews (\'D\' or \'d\')" << endl;
     cout << "- Add New Review (\'N\' or \'n\')" << endl;
     cout << "- Search (\'S\' or \'s\')" << endl;
     cout << "- Quit (\'Q\' or \'q\')" << endl;
 }
 
+
+//Make addReview a virtual function in review.cpp, and make artist, album, and song have their own instances of it. Each of those objs should have a vector of that same obj to handle multiple
+//reviews for one obj.
 void Wavez::addReview(){
-    string subject;
+    string reviewName;
     string body;
+    int rating;
     string author = name;
-    cout << "Enter Subject: ";
+    cout << "Enter Name: ";
     cin.ignore();
-    getline(cin, subject);
+    getline(cin, reviewName);
     cout << endl;
-    cout << "Enter Body: ";
+    cout << "Enter rating: ";
+    cin >> rating;
+    cout << endl;
+    cout << "Enter Review: ";
+    cin.ignore();
     getline(cin, body);
     cout << endl;
-    Review newRev(author, subject, body);
+    Review newRev(author, body, reviewName, rating);
     reviewList.push_back(newRev);
     cout << "Review Recorded!" << endl;
     cout << endl;
