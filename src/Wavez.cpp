@@ -102,6 +102,9 @@ void Wavez::run(){
         else if ((cont == "N") || (cont == "n")){
             addReview();
         }
+	else if ((cont == "S" || (cont == "s")){
+		cout << "Implement search() function" << endl;
+	}
         else if ((cont == "Q") || (cont == "q")){
             cout << "Bye!" << endl;
             ++loop;
@@ -113,6 +116,7 @@ void Wavez::display() const{
     cout << "Menu" << endl;
     cout << "- Display Reviews (\'D\' or \'d\')" << endl;
     cout << "- Add New Review (\'N\' or \'n\')" << endl;
+    cout << "- Search (\'S\' or \'s\')" << endl;
     cout << "- Quit (\'Q\' or \'q\')" << endl;
 }
 
