@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-#include "../header/User.h"
+#include "../header/user.h"
 
  // creates a user with empty name and password.
 User::User() : username(""),  password(""){}

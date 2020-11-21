@@ -21,8 +21,10 @@ class Review {
 	
 	/* Displays the Review using the following format:
 	 *
-	 * subject
-	 * from author: body
+	 * Name:
+	 * Rating: /5
+	 * Review: 
+	 * Posted By:
 	 */
 	void display() const;	
 #endif
