@@ -64,7 +64,7 @@ class Wavez {
  
     // These are only suggestions, not required helper functions.
     // Feel free to make your own private helper functions as you see fit.
-    void display() const;
+    void displayMenu() const;
     void addReview();
     bool userExists(const string &, const string &) const;
 };

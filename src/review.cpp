@@ -5,18 +5,23 @@ using namespace std;
 // default constructor
 Review::Review(){
     author = "";
-    subject = "";
+    name = "";
     body = "Nothing to display!";
+    rating = -1;
 }
 
-Review::Review(const string &athr, const string &sbjct, const string &body){
+Review::Review(const string &athr, const string &body, const string &nme, const int &rat){
     author = athr;
-    subject = sbjct;
+    name = nme;
+    rating = rat;
     this->body = body;
 }
 
 void Review::display() const{
-    cout << this->subject << endl;
-    cout << "from " << this->author << ": " << this->body;
+    cout << "Name: " << name << endl;
+    cout << "Rating: " << rating << "/5" << endl;
+    cout << "Posted By " << this->author << ": " << this->body;
 }
+
+
 

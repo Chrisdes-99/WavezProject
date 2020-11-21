@@ -6,8 +6,9 @@ using namespace std;
 
 class Review {
  private:
+	string name;
+	int rating;
 	string author;
-	string subject;
 	string body;
 
  public:
@@ -15,17 +16,16 @@ class Review {
 	// default constructor
 	Review();
 	// Parameterized constructor; 
-	Review(const string &athr, 
-	     const string &sbjct, 
-	     const string &body);
+	Review(const string &athr, const string &body, const string &nme, const int &rat);
 	
 	/* Displays the Review using the following format:
 	 *
 	 * Name:
 	 * Rating: /5
+	 * Posted By: 
 	 * Review: 
-	 * Posted By:
+	 *
 	 */
-	void display() const;	
+	virtual void display() const;	
 #endif
 };
