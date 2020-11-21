@@ -3,7 +3,7 @@
 
 using namespace std;
 
-#include "../header/Wavez.h"
+#include "../header/wavez.h"
 
 int main(int argc, char *argv[]) {
     string userfile; // = argv[1];

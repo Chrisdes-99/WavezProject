@@ -7,9 +7,9 @@ SET(CMAKE_CXX_STANDARD 11)
 
 ADD_EXECUTABLE(main
 	src/main.cpp
-	src/User.cpp
-	src/Review.cpp
-	src/Wavez.cpp
+	src/user.cpp
+	src/review.cpp
+	src/wavez.cpp
 )
 
 ADD_EXECUTABLE(test

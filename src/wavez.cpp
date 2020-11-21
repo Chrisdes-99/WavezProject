@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 using namespace std;
-#include "../header/Wavez.h"
+#include "../header/wavez.h"
 string name;
 
 Wavez::Wavez(){

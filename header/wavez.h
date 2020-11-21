@@ -5,8 +5,8 @@
 #include <vector>
 using namespace std;
 
-#include "Review.h"
-#include "User.h"
+#include "review.h"
+#include "user.h"
 
 class Wavez {
    
