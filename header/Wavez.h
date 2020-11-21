@@ -1,5 +1,5 @@
-#ifndef BBOARD_H
-#define BBOARD_H
+#ifndef __WAVEZ_H__
+#define __WAVEZ_H__
 
 #include <string>
 #include <vector>
