@@ -171,28 +171,3 @@ void Wavez::displayMenu() const{
     cout << "- Search (\'S\' or \'s\')" << endl;
     cout << "- Quit (\'Q\' or \'q\')" << endl;
 }
-
-
-//Make addReview a virtual function in review.cpp, and make artist, album, and song have their own instances of it. Each of those objs should have a vector of that same obj to handle multiple
-//reviews for one obj.
-void Wavez::addReview(){
-    string reviewName;
-    string body;
-    int rating;
-    string author = name;
-    cout << "Enter Name: ";
-    cin.ignore();
-    getline(cin, reviewName);
-    cout << endl;
-    cout << "Enter rating: ";
-    cin >> rating;
-    cout << endl;
-    cout << "Enter Review: ";
-    cin.ignore();
-    getline(cin, body);
-    cout << endl;
-    Review newRev(author, body, reviewName, rating);
-    reviewList.push_back(newRev);
-    cout << "Review Recorded!" << endl;
-    cout << endl;
-}
