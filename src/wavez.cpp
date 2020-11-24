@@ -50,10 +50,22 @@ bool Wavez::login(){
         cin >> userAction;
 
         if (userAction == 1) {
+            cout << "Please enter your username!\n";
+            getline(cin, currentUser);
+            cout << endl;
+            cout << "Now please enter your password!\n";
+            getline(cin, currentPassword);
+            cout << endl;
 
+            User userLogin(currentUser, currentPassword);
         }
         else if (userAction == 2) {
-
+            cout << "Please create your username!\n";
+            getline(cin, currentUser);
+            cout << endl;
+            cout << "Please enter a password for " << currentUser << endl;
+            getline(cin, currentPassword);
+            cout << endl;
 
         }
         else if (userAction == 3) {
@@ -68,40 +80,7 @@ bool Wavez::login(){
 
         break;
     }
-    /*
-    bool cont = true;
-    while (cont){
-        cout << "Enter your username ('Q' or 'q' to quit): ";
-        cin >> currentUser;
-        cout << endl;
-        if (currentUser == "Q" || currentUser == "q"){
-            cout << "Bye!" << endl;
-            return false;
-        }
-        cout << "Enter your password: ";
-        cin >> currentPassword;
-        cout << endl;
-        User inputUser(currentUser, currentPassword);
-        //Iterate through vector
-        int foundUser = 0;
-        for (unsigned int i = 0; i < userList.size(); ++i){
-            if (userList.at(i).check(currentUser, currentPassword)){
-                ++foundUser;
-            }
-        }
-        
-        if (foundUser > 0){
-            cout << "Welcome back " << inputUser.getUsername() << "!" << endl;
-            name = inputUser.getUsername();
-            cout << endl;
-            cont = false;
-        }
-        else{
-            cout << "Invalid Username or Password!" << endl;
-            cout << endl;
-        }
-    }
-    */
+    
     return true;
 }
 

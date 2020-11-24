@@ -12,8 +12,6 @@
 */
 
 class UsernameManager { 
- private:
-    string userName;
 
  public:
    UsernameManager();
@@ -26,6 +24,6 @@ class UsernameManager {
    
 
 
-}
+};
 
 #endif //__USERNAMEMANAGER_H__

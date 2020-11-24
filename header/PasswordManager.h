@@ -12,8 +12,6 @@
 
 
 class Passwordmanager { 
- private:
-    string userPassword;
 
  public:
    PasswordManager();
@@ -23,7 +21,6 @@ class Passwordmanager {
    void PasswordAdd();
    void PasswordRemove();
 
-
-}
+};
 
 #endif //__PASSWORDMANAGER_H__
