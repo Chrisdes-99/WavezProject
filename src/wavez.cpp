@@ -38,7 +38,37 @@ bool Wavez::loadUsers(const string &inputFile){
 bool Wavez::login(){
     string currentUser;
     string currentPassword;
+    int userAction(0);
+    
     cout << "Welcome to Wavez" << endl;
+    while (true) {
+        cout << "Please choose an option by entering the corresponding number:\n" <<
+        "(1) Login" << endl <<
+        "(2) Register an Account" << endl <<
+        "(3) Deactivate an Account" << endl <<
+        "(0) Quit" << endl;
+        cin >> userAction;
+
+        if (userAction == 1) {
+
+        }
+        else if (userAction == 2) {
+
+
+        }
+        else if (userAction == 3) {
+
+        }
+        else if (userAction == 0) {
+
+        }
+        else {
+            cout << "Incorrect Option, Please try again" << endl;
+        }
+
+        break;
+    }
+    /*
     bool cont = true;
     while (cont){
         cout << "Enter your username ('Q' or 'q' to quit): ";
@@ -71,6 +101,7 @@ bool Wavez::login(){
             cout << endl;
         }
     }
+    */
     return true;
 }
 
