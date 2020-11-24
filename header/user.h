@@ -8,8 +8,9 @@ class User {
  private:
  
  public:
- 
-
+  void userLogin();
+  void userAdd();
+  void userRemove();
 };
 
 #endif //__USER_H__

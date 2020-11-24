@@ -19,6 +19,10 @@ class UsernameManager {
    UsernameManager();
    //pass by ref here to save mem, no new copy
    UsernameManager(const string& );
+
+   bool UsernameVerify();
+   void UsernameAdd();
+   void UsernameRemove();
    
 
 

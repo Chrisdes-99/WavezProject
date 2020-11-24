@@ -15,10 +15,13 @@ class Passwordmanager {
  private:
     string userPassword;
 
-
  public:
+   PasswordManager();
+   PasswordManager(const string& );
 
-
+   bool PasswordVerify();
+   void PasswordAdd();
+   void PasswordRemove();
 
 
 }
