@@ -7,6 +7,7 @@ using namespace std;
 
 #include "review.h"
 #include "user.h"
+#include "artist.hpp"
 
 class Wavez {
    
@@ -14,7 +15,7 @@ class Wavez {
     string title;
     vector<User> userList;
     User currentUser;
-    vector<Review> reviewList;
+    vector<Artist*> artistList;
 
  public:
     /* Constructs a board with a default title, 
