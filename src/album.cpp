@@ -12,3 +12,8 @@ Album::Album(string nam, int rat){
 }
 
 void Album::addReview(){}
+
+int Album::getRating(){
+	return rating;
+}
+
