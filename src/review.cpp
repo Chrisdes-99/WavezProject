@@ -20,7 +20,8 @@ Review::Review(const string &athr, const string &body, const string &nme, const 
 void Review::display() const{
     cout << "Name: " << name << endl;
     cout << "Rating: " << rating << "/5" << endl;
-    cout << "Posted By " << this->author << ": " << this->body;
+    cout << "Posted By: " << this->author << endl;
+    cout << "Review: " << this->body;
 }
 
 
