@@ -16,7 +16,7 @@ class Song:public Artist
   public:
 	Song();
 	Song(string nam, int rat);
-	virtual void addReview(){};
+	virtual void addReview();
 };
 
 

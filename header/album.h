@@ -19,7 +19,8 @@ class Album:public Artist
   public:
 	Album();
 	Album(string nam, int rate);
-	virtual void addReview(){};
+	virtual void addReview();
+	int getRating();
 
 };
 
