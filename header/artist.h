@@ -10,8 +10,8 @@ class Artist
 {
  protected:
     std::string Name;
-    Song* vector<Review*>songList;
-    Album* vector<Review*>albumList;
+    vector<Review*>songList;
+    vector<Review*>albumList;
     int rating;
 
  public:

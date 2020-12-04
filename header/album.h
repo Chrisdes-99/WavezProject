@@ -10,8 +10,8 @@
 class Album:public Artist
 {
   private:
-	Review* std::vector<Review*>albumReview;
-	Review* std::vector<Review*>addReview;
+	std::vector<Review*>albumReview;
+	std::vector<Review*>addReview;
 	string name;
 	int rating;
 
@@ -19,7 +19,7 @@ class Album:public Artist
   public:
 	Album();
 	Album(string nam, int rate);
-	void addReview(){};
+	virtual void addReview(){};
 
 };
 
