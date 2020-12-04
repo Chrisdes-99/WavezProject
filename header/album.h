@@ -21,6 +21,7 @@ class Album:public Artist
 	Album(string nam, int rate);
 	int getRating();
 	void addReview();
+	void addReview(){};
 
 };
 

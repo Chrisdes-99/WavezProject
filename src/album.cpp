@@ -16,3 +16,4 @@ void Album::addReview(){}
 int Album::getRating(){
 	return rating;
 }
+

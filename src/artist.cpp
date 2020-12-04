@@ -17,6 +17,7 @@ void Artist::setRating(){
 		sum = sum + albumList.at(i)->getRating();
         }
 	this->rating = (sum/size);
+	return;
 }
 
 virtual void Artist::addReview(){
