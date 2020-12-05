@@ -21,9 +21,9 @@ class Artist
     void setRating(); //Calculates rating average based on the artist's albums ratings
     void displaySongs();
     void displayAlbums();
-
     virtual void addReview()= 0;
 };
 
 
 #endif
+

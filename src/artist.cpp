@@ -20,6 +20,7 @@ void Artist::setRating(){
 	return;
 }
 
+
 string Artist::getName(){
 	return Name;
 }
@@ -52,3 +53,4 @@ void Artist::displayAlbums(){
 	
 
 }
+

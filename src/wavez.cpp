@@ -39,39 +39,49 @@ bool Wavez::loadUsers(const string &inputFile){
 bool Wavez::login(){
     string currentUser;
     string currentPassword;
+    int userAction(0);
+    
     cout << "Welcome to Wavez" << endl;
-    bool cont = true;
-    while (cont){
-        cout << "Enter your username ('Q' or 'q' to quit): ";
-        cin >> currentUser;
-        cout << endl;
-        if (currentUser == "Q" || currentUser == "q"){
-            cout << "Bye!" << endl;
-            return false;
-        }
-        cout << "Enter your password: ";
-        cin >> currentPassword;
-        cout << endl;
-        User inputUser(currentUser, currentPassword);
-        //Iterate through vector
-        int foundUser = 0;
-        for (unsigned int i = 0; i < userList.size(); ++i){
-            if (userList.at(i).check(currentUser, currentPassword)){
-                ++foundUser;
-            }
-        }
-        
-        if (foundUser > 0){
-            cout << "Welcome back " << inputUser.getUsername() << "!" << endl;
-            name = inputUser.getUsername();
+    while (true) {
+        cout << "Please choose an option by entering the corresponding number:\n" <<
+        "(1) Login" << endl <<
+        "(2) Register an Account" << endl <<
+        "(3) Deactivate an Account" << endl <<
+        "(0) Quit" << endl;
+        cin >> userAction;
+
+        if (userAction == 1) {
+            cout << "Please enter your username!\n";
+            getline(cin, currentUser);
             cout << endl;
-            cont = false;
-        }
-        else{
-            cout << "Invalid Username or Password!" << endl;
+            cout << "Now please enter your password!\n";
+            getline(cin, currentPassword);
             cout << endl;
+
+            User userLogin(currentUser, currentPassword);
         }
+        else if (userAction == 2) {
+            cout << "Please create your username!\n";
+            getline(cin, currentUser);
+            cout << endl;
+            cout << "Please enter a password for " << currentUser << endl;
+            getline(cin, currentPassword);
+            cout << endl;
+
+        }
+        else if (userAction == 3) {
+
+        }
+        else if (userAction == 0) {
+
+        }
+        else {
+            cout << "Incorrect Option, Please try again" << endl;
+        }
+
+        break;
     }
+    
     return true;
 }
 
@@ -174,27 +184,3 @@ void Wavez::displayMenu() const{
     cout << "- Quit (\'Q\' or \'q\')" << endl;
 }
 
-
-//Make addReview a virtual function in review.cpp, and make artist, album, and song have their own instances of it. Each of those objs should have a vector of that same obj to handle multiple
-//reviews for one obj.
-void Wavez::addReview(){
-    string reviewName;
-    string body;
-    int rating;
-    string author = name;
-    cout << "Enter Name: ";
-    cin.ignore();
-    getline(cin, reviewName);
-    cout << endl;
-    cout << "Enter rating: ";
-    cin >> rating;
-    cout << endl;
-    cout << "Enter Review: ";
-    cin.ignore();
-    getline(cin, body);
-    cout << endl;
-    Review newRev(author, body, reviewName, rating);
-   // reviewList.push_back(newRev);
-    cout << "Review Recorded!" << endl;
-    cout << endl;
-}
