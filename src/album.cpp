@@ -11,7 +11,23 @@ Album::Album(string nam, int rat){
 	rating = rat;
 }
 
-void Album::addReview(){}
+void Album::addReview(){
+     
+  char albumReview[100];
+
+  cout<< "Leave a Review for" << this->name<<endl;
+  
+  std::cin.getline(albumReview,100);
+ 
+  Review album(author,name,review,rating);
+
+  albumList.push_back(name);
+
+  addReview.push_back(album);
+
+  cout<< "Review for" << this-> name << "added by" << this->author <<endl;
+
+}
 
 int Album::getRating(){
 	return rating;
