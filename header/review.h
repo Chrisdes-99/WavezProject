@@ -26,6 +26,6 @@ class Review {
 	 * Review: 
 	 *
 	 */
-	virtual void display() const;	
-#endif
+	void display() const;	
 };
+#endif

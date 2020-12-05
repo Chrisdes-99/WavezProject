@@ -2,6 +2,7 @@
 #include <fstream>
 using namespace std;
 #include "../header/wavez.h"
+#include "artist.cpp"
 string name;
 
 Wavez::Wavez(){
@@ -97,10 +98,12 @@ void Wavez::run(){
 		cin.ignore();
 		getline(cin,artistName);
 		cout << endl;
+		Artist* selectedArtist = nullptr;
 		bool foundArtist = false;
                 for (unsigned int i = 0; i < artistList.size(); ++i){
-              		if(artistList.at(i)->Name == artistName){ //make name getter  function
+              		if(artistList.at(i)->getName() == artistName){
 				foundArtist = true;
+				selectedArtist = artistList.at(i);
 			}
 	    	}
 		
@@ -112,10 +115,10 @@ void Wavez::run(){
 			cout << "Do you want to see Song (S) or Album (A) reviews for this artist?" << endl;
 			cin >> displayChoice;
 			if (displayChoice == "S"){
-				//call display on artist pointer on song vector of found artist (loop)
+				selectedArtist->displaySongs();
 			}
-			else if (displayChoid == "A"){
-				//call display on artist pointer on album vector of found artist (loop)
+			else if (displayChoice == "A"){
+				selectedArtist->displayAlbums();
 			}
 			else{
 				cout << "Invalid entry" << endl;
@@ -191,7 +194,7 @@ void Wavez::addReview(){
     getline(cin, body);
     cout << endl;
     Review newRev(author, body, reviewName, rating);
-    reviewList.push_back(newRev);
+   // reviewList.push_back(newRev);
     cout << "Review Recorded!" << endl;
     cout << endl;
 }

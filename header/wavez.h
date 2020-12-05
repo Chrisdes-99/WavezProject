@@ -7,7 +7,7 @@ using namespace std;
 
 #include "review.h"
 #include "user.h"
-#include "artist.hpp"
+#include "artist.h"
 
 class Wavez {
    
