@@ -2,6 +2,7 @@
 #include <fstream>
 using namespace std;
 #include "../header/wavez.h"
+#include "artist.cpp"
 string name;
 
 Wavez::Wavez(){
@@ -93,28 +94,56 @@ void Wavez::run(){
         cout << "Choose an action: ";
         cin >> cont;
         cout << endl;
+
+
+
         if ((cont == "D") || (cont == "d")){
-            if (reviewList.size() == 0){
+            if (artistList.size() == 0){
                 cout << "Nothing to Display." << endl;
                 cout << endl;
             }
             else{
-                for (unsigned int i = 0; i < reviewList.size(); ++i){
-                    cout << "---------------------------------------------------------" << endl;
-                    cout << "Review #" << (i + 1) << ": ";
-                    reviewList.at(i).display();
-                    cout << endl;
-                }
-                cout << "---------------------------------------------------------" << endl;
-                cout << endl;
-            }
+		string artistName;
+		cout << "Which artist would you like to see reviews for?" << endl;
+		cin.ignore();
+		getline(cin,artistName);
+		cout << endl;
+		Artist* selectedArtist = nullptr;
+		bool foundArtist = false;
+                for (unsigned int i = 0; i < artistList.size(); ++i){
+              		if(artistList.at(i)->getName() == artistName){
+				foundArtist = true;
+				selectedArtist = artistList.at(i);
+			}
+	    	}
+		
+		if (!foundArtist){
+			cout << "Artist does not exist in Wavez." << endl;
+		}
+		else{
+			string displayChoice;	
+			cout << "Do you want to see Song (S) or Album (A) reviews for this artist?" << endl;
+			cin >> displayChoice;
+			if (displayChoice == "S"){
+				selectedArtist->displaySongs();
+			}
+			else if (displayChoice == "A"){
+				selectedArtist->displayAlbums();
+			}
+			else{
+				cout << "Invalid entry" << endl;
+			}
+		}
+	    }
         }
+
+
+
         else if ((cont == "N") || (cont == "n")){
 	    cout << "Artist(1); Album(2); Song(3)" << endl;
 	    int choice;
 	    cin >>choice;
-	//Make it so that each option creates an instance of that object and calls that obj's addReview function.
-	//Before creating new obj, make sure to search if it already exists, if so just add the review to a vector within that obj
+	
 	    if (choice == 1){
 	    	//implement artist
 	    	addReview();
@@ -133,6 +162,10 @@ void Wavez::run(){
 		addReview();
 	    }
         }
+
+
+
+
 	else if ((cont == "S") || (cont == "s")){
 		cout << "Implement search() function" << endl;
 	}
@@ -150,3 +183,4 @@ void Wavez::displayMenu() const{
     cout << "- Search (\'S\' or \'s\')" << endl;
     cout << "- Quit (\'Q\' or \'q\')" << endl;
 }
+

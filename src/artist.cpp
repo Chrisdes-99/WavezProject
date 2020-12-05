@@ -20,6 +20,37 @@ void Artist::setRating(){
 	return;
 }
 
+
+string Artist::getName(){
+	return Name;
+}
+
 virtual void Artist::addReview(){
 	return;
 }
+
+
+void Artist::displaySongs(){
+	for (unsigned int i = 0; i < songList.size(); ++i){
+		cout << "---------------------------------------------------------" << endl;
+		cout << "Review #" << (i + 1) << ": ";
+		songList.at(i)->display();
+		cout << endl;
+	}
+	cout << "---------------------------------------------------------" << endl;
+
+}
+
+
+void Artist::displayAlbums(){
+	for (unsigned int i = 0; i < albumList.size(); ++i){
+        	cout << "---------------------------------------------------------" << endl;
+                cout << "Review #" << (i + 1) << ": ";
+                albumList.at(i)->display();
+                cout << endl;
+        }
+        cout << "---------------------------------------------------------" << endl;
+	
+
+}
+

@@ -27,5 +27,5 @@ class Review {
 	 *
 	 */
 	void display() const;	
-#endif
 };
+#endif
