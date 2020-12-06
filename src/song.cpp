@@ -3,30 +3,23 @@ using namespace std;
 
 Song::Song(){}
 
+Song::Song(string nam, int rat){
+	name = nam;
+	rating = rat;
+}
+
 void Song::addReview(){
 
   char songReview[100];
-
-  int rating;
-
-  std::string name;
-
-  cout<<"Enter the Name of the Album You'd Like to Review."<<endl;
-
-  cin >> name;
-
-  cout<<"Enter a Rating for" << name << endl;
-
-  cin >> rating;
-
-  cout<<"Leave A Review For"<< name <<endl;
+ 
+  cout<<"Leave A Review"<<endl;
 
   std::cin.getline(songReview,100);
 
-  Review* song = new Review (author, name, songReview, rating);
+  Review* song = new Review(author,this->name,songReview,this->rating);
 
   songList.push_back(song);
 
-  cout<< "Review for" << name << "added!" << endl;
+  cout<< "Review for " << this->name << "added!"<< endl;
 
 }
