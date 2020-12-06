@@ -9,11 +9,8 @@ int main(int argc, char *argv[]) {
    Wavez prog("Wavez Program");
 
    //===================REVIEWS READ===================
-   string reviewFile;
-   cout << "Please enter the name of the review file" << endl;
-   cin >> reviewFile;
-   if (!prog.loadReviews(reviewFile)) {
-      cout << "Error loading reviews from " << reviewFile << ", exiting." << endl;
+   if (!prog.loadReviews()) {
+      cout << "Error loading reviews from " << ", exiting." << endl;
       return 1;
    }
 
