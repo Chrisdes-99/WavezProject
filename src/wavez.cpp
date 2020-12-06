@@ -18,20 +18,18 @@ Wavez::Wavez(const string &ttle){
     User def();
 }
 
-bool Wavez::loadReviews(const string& reviewFile) {
+bool Wavez::loadReviews() {
  //FORMAT:
  //
  //
  //
-    ifstream infs(reviewFile);
-    if (!infs) {
-        return false;
-    }
-    else {
-
-
-
-    }
+ //   ifstream infs(reviewFile);
+ //   if (!infs) {
+ //       return false;
+ //   }
+ //   else {
+ //   }
+ return true;
 
 }
 
