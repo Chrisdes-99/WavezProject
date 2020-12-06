@@ -6,14 +6,28 @@ ADD_SUBDIRECTORY(googletest)
 SET(CMAKE_CXX_STANDARD 11)
 
 ADD_EXECUTABLE(main
+	src/album.cpp
+	src/artist.cpp
 	src/main.cpp
-	src/user.cpp
+	src/PasswordManager.cpp
 	src/review.cpp
+	src/song.cpp
+	src/user.cpp
+	src/UsernameManager.cpp
 	src/wavez.cpp
 )
 
 ADD_EXECUTABLE(test
 	tests/unit_test.cpp
+	src/album.cpp
+	src/artist.cpp
+	src/main.cpp
+	src/PasswordManager.cpp
+	src/review.cpp
+	src/song.cpp
+	src/user.cpp
+	src/UsernameManager.cpp
+	src/wavez.cpp
 )
 
 
