@@ -1,28 +1,32 @@
 #include "../header/song.h"
 using namespace std;
 
-Song::Song(){
-	name = "";
-	rating = 0;
-}
-
-Song::Song(string nam, int rat){
-	name = nam;
-	rating = rat;
-}
+Song::Song(){}
 
 void Song::addReview(){
 
   char songReview[100];
 
-  cout<<"Leave A Review For"<< this->name <<end;
+  int rating;
+
+  std::string name;
+
+  cout<<"Enter the Name of the Album You'd Like to Review."<<endl;
+
+  cin >> name;
+
+  cout<<"Enter a Rating for" << name << endl;
+
+  cin >> rating;
+
+  cout<<"Leave A Review For"<< name <<endl;
 
   std::cin.getline(songReview,100);
 
-  Review song(author, name, songReview, rating);
+  Review* song = new Review (author, name, songReview, rating);
 
-  addReview.push_back(song);
+  songList.push_back(song);
 
-  cout<< "Review for" << this-> name << "added by" << endl;
+  cout<< "Review for" << name << "added!" << endl;
 
 }

@@ -11,11 +11,11 @@ class Song:public Artist
 {
   private:
 	std::vector<Review*>songReview;
-	string name;
-	int rating;
+
+	//string name;
+	//int rating;
   public:
 	Song();
-	Song(string nam, int rat);
 	virtual void addReview();
 };
 
