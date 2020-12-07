@@ -115,7 +115,8 @@ bool Wavez::login(){
             //User temp_user(currentUser, currentPassword, userList);
 
             if (!temp_user.userLogin()) {
-                return false;
+                //return false;
+                return true;
             }
             return true;
 
