@@ -2,10 +2,7 @@
 //#include "../header/artist.h"
 using namespace std;
 
-Song::Song(){
-	name = "";
-	rating = 0;
-}
+Song::Song(){}
 
 Song::Song(string nam, int rat){
 	name = nam;
@@ -16,4 +13,18 @@ vector<Review*> Song::getSongReview(){
 	return songReview;
 }
 
-void Song::addReview(){}
+void Song::addReview(){
+
+     char song_review[100];
+    
+     cout<<"Leave A Review"<<endl;
+
+     std::cin.getline(song_review,100);
+
+     Review* song = new Review(author,this->name,song_review,this->rating);
+
+     songReview.push_back(song);
+
+     cout<<"Review for " << this->name <<"added!"<<endl;
+}
+

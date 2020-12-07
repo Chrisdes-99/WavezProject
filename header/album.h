@@ -24,9 +24,4 @@ class Album:public Artist
 
 };
 
-
-
-
-
-
 #endif

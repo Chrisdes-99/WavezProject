@@ -229,27 +229,126 @@ void Wavez::run(){
 
 
         else if ((cont == "N") || (cont == "n")){
-	    cout << "Artist(1); Album(2); Song(3)" << endl;
+            addReview_menu:
+
+            while(true){
+	    cout << "Album(1); Song(2)" << endl;
 	    int choice;
 	    cin >>choice;
-	
-	    if (choice == 1){
-	    	//implement artist
-	    	//addReview();
+
+	    if(choice == 1){
+               
+             int rating;
+             string albumName; 
+             string artistName;
+
+	     for(unsigned i = 0 ; i<artistList.size(); i++)
+
+  		if(artistList.at(i)->getName() == artistName){
+
+       		Artist* existingArtist = artistList.at(i);
+
+       		cout<< "Enter An Album You’d Like to Review" <<endl;
+       		cin >> albumName;
+
+       		for(unsigned j = 0; j<existingArtist.getAlbumVector().size();j++)
+            	if(existingArtist.getAlbumVector.at(i) == albumName){
+               	existingArtist->addReview();
+            	}
+   
+            	else{
+            
+               	cout<< "Give A Rating For" << albumName <<endl;               
+
+              	Artist* album = new Album(albumName,rating);
+              	existingArtist.getAlbumVector.push_back(album);
+              	album->addReview();
+            	}
+       
+  
+  			}		
+  
+
+  		else{
+       		Artist* newArtist = new Artist(artistName);
+
+       		artistList.push_back(newArtist);
+       
+       		cout<< "Enter the Name of the Album"<<endl;
+       		cin>>albumName;
+       
+       		cout<< "Give A Rating Out of Five For "<<albumName<<endl;
+       		cin >> rating;
+
+       		Artist* album = new Album(albumName,rating);
+
+       		newArtist.getAlbumVector().push_back(album);
+
+       		album->addReview();
+     		}
+              
 	    }
+
+
+
+
 	    else if (choice == 2){
-		//implement album
-		    //addReview();
-	    }
-	    else if (choice == 3){
-		//implement song
-		    //addReview();
+	         int rating;
+		 string songName; 
+		 string artistName;
+
+		for(unsigned i = 0 ; i<artistList.size(); i++)
+
+  		   if(artistList.at(i)->getName() == artistName){
+
+       		   Artist *existingArtist = artistList.at(i);
+
+       		   cout<< "Enter The Song You’d Like to Review" <<endl;
+       	           cin >> songName;
+
+       		    for(unsigned j = 0; j<existingArtist.getSongVector().size();j++)
+            		if(existingArtist.getSongVector.at(i) == songName){
+               		existingArtist->addReview();
+            		}	
+   
+            	   else{
+            
+               	cout<< "Give A Rating For" << songName <<endl;               
+
+              	Artist* song = new Song(songName,rating);
+              	existingArtist.getSongVector.push_back(song);
+              	song->addReview();
+            		}	
+       
+  
+  		}
+  
+
+  	        else{
+       		Artist* newArtist = new Artist(artistName);
+
+       		artistList.push_back(newArtist);
+       
+       		cout<< "Enter the Name of the Song"<<endl;
+       		cin>>songName;
+       
+       		cout<< "Give A Rating Out of Five For " << songName << endl;
+       		cin >> rating;
+
+       		Artist* song = new Song(songName,rating);
+
+       		newArtist.getSongVector().push_back(song);
+
+       		song->addReview();
+     		}
+    	
 	    }
 	    else{
-		cout << "Not a valid input. Try again." << endl;
-		//implement loop so it tries again
-		    //addReview();
+             cout << "Not a valid input. Try again." << endl;
+              goto addReview_menu;
 	    }
+
+          }
         }
 
 
