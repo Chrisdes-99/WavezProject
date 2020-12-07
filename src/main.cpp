@@ -41,7 +41,7 @@ int main(int argc, char *argv[]) {
 
 
    //===================SAVE LOGIN INFO TO FILE===================
-   prog.offloadLogin(userfile, passfile);
+   //prog.offloadLogin(userfile, passfile);
 
    return 0;
 }
