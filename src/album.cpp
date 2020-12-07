@@ -13,13 +13,13 @@ Album::Album(string nam, int rat){
 
 void Album::addReview(){
      
-  char albumReview[100];
+  char album_review[100];
 
   cout << "Leave a Review" <<endl;
   
-  std::cin.getline(albumReview,100);
+  std::cin.getline(album_review,100);
  
-  Review* album = new Review(author,this->name,albumReview,this->rating);
+  Review* album = new Review(author,this->name,album_review,this->rating);
 
   albumList.push_back(album);
 
