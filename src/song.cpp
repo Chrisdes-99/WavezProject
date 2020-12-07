@@ -11,4 +11,8 @@ Song::Song(string nam, int rat){
 	rating = rat;
 }
 
+vector<Review*> Song::getSongReview(){
+	return songReview();
+}
+
 void Song::addReview(){}

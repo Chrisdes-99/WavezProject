@@ -25,6 +25,14 @@ string Artist::getName(){
 	return Name;
 }
 
+vector<Song*> Artist::getSongVector(){
+	return songList;
+}
+
+vector<Album*> Artist::getAlbumVector(){
+	return albumList;
+}
+
 virtual void Artist::addReview(){
 	return;
 }
