@@ -1,4 +1,6 @@
 #include "../header/artist.h"
+#include "../header/album.h"
+#include "../header/song.h"
 #include <iostream>
 using namespace std;
 
@@ -33,7 +35,7 @@ vector<Album*> Artist::getAlbumVector(){
 	return albumList;
 }
 
-virtual void Artist::addReview(){
+void Artist::addReview(){
 	return;
 }
 
@@ -41,8 +43,14 @@ virtual void Artist::addReview(){
 void Artist::displaySongs(){
 	for (unsigned int i = 0; i < songList.size(); ++i){
 		cout << "---------------------------------------------------------" << endl;
-		cout << "Review #" << (i + 1) << ": ";
-		songList.at(i)->display();
+		vector<Review*> displayVector = songList.at(i)->getSongReview();
+		for(unsigned int j = 0; j < displayVector.size(); ++j){
+	                cout << "Review for " << displayVector.at(j)->getName() << " #" << (j + 1) << ": ";
+	                displayVector.at(j)->display();
+			cout << endl;
+	
+		}
+	        cout << "---------------------------------------------------------" << endl;
 		cout << endl;
 	}
 	cout << "---------------------------------------------------------" << endl;
@@ -53,9 +61,14 @@ void Artist::displaySongs(){
 void Artist::displayAlbums(){
 	for (unsigned int i = 0; i < albumList.size(); ++i){
         	cout << "---------------------------------------------------------" << endl;
-                cout << "Review #" << (i + 1) << ": ";
-                albumList.at(i)->display();
+                vector<Review*> displayVector = albumList.at(i)->getAlbumReview();
+		for(unsigned int j = 0; j < displayVector.size(); ++j){
+                cout << "Review for " << displayVector.at(j)->getName() << " #" << (j + 1) << ": ";
+                displayVector.at(j)->display();
+
+		}
                 cout << endl;
+	        cout << "---------------------------------------------------------" << endl;
         }
         cout << "---------------------------------------------------------" << endl;
 	

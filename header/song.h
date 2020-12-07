@@ -2,13 +2,14 @@
 #define __SONG_H__
 
 #include "artist.h"
+//class Artist;
 #include "review.h"
 
 #include <vector>
 #include <string>
 
-class Song:public Artist
-{
+
+class Song : public Artist{
   private:
 	std::vector<Review*>songReview;
 

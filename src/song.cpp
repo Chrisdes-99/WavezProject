@@ -1,4 +1,5 @@
 #include "../header/song.h"
+//#include "../header/artist.h"
 using namespace std;
 
 Song::Song(){}
@@ -9,7 +10,7 @@ Song::Song(string nam, int rat){
 }
 
 vector<Review*> Song::getSongReview(){
-	return songReview();
+	return songReview;
 }
 
 void Song::addReview(){}

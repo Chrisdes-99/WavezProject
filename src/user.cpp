@@ -1,6 +1,8 @@
 #include "../header/user.h"
 #include "../header/UsernameManager.h"
 #include "../header/PasswordManager.h"
+using namespace std;
+#include <iostream>
 
 User::User() {
     username = "";
@@ -20,12 +22,12 @@ bool User::userLogin() {
     UsernameManager temp_user = UsernameManager(this->username, userList);
     PasswordManager temp_pass = PasswordManager(this->password, userPass);
 
-    if (temp_user.userLogin() != temp_pass.userLogin()) {
+    if (temp_user.userLogin() == temp_pass.userLogin()) {
+        return true;
+    }
+    else {
         return false;
     }
-    
-    return true;
-
 }
 
 vector<vector<string> > User::userAdd(){ 

@@ -1,5 +1,8 @@
 #include "../header/wavez.h"
-#include "artist.cpp"
+#include "../header/artist.h"
+#include "../header/review.h"
+#include "../header/song.h"
+#include "../header/album.h"
 
 #include <iostream>
 #include <fstream>
@@ -36,7 +39,9 @@ bool Wavez::loadReviews() {
 
 bool Wavez::loadLogin(const string &userfile, const string &passfile){
     ifstream fin (userfile);
-    ifstream fin_2(passfile);
+    ifstream fin_2 (passfile);
+
+
     if (!fin){
         return false;
     }
@@ -44,6 +49,7 @@ bool Wavez::loadLogin(const string &userfile, const string &passfile){
         return false;
     }
     else{
+
         string currUser;
         string currPass;
         while (fin >> currUser) {
@@ -54,12 +60,12 @@ bool Wavez::loadLogin(const string &userfile, const string &passfile){
         }
 
         if (vUsers.size() < vPass.size()) {
-            cout << "There are less usernames than there are passwords, please fix" << endl;
+            cout << "There are less usernames than there are passwords, please check the files." << endl;
             return false;
         }
 
         else if (vUsers.size() > vPass.size()) {
-            cout << "There are less passwords than there are usernames, please fix" << endl;
+            cout << "There are less passwords than there are usernames, please check the files." << endl;
             return false;
         }
 /*
@@ -71,6 +77,7 @@ bool Wavez::loadLogin(const string &userfile, const string &passfile){
         userList.pop_back();
         return true;
 */
+    return true;
     }
 }
 
@@ -93,28 +100,29 @@ bool Wavez::login(){
 
         if (userAction == 1) {
             cout << "Please enter your username!\n";
-            getline(cin, currentUser);
-            cout << endl;
-            cout << "Now please enter your password!\n";
-            getline(cin, currentPassword);
+            cin >> currentUser;
+            cout << endl;            
+            cout << "Now please enter your password!\n";         
+            cin >> currentPassword;
             cout << endl;
 
             User temp_user(currentUser, currentPassword, vUsers, vPass);
-
             //User temp_user(currentUser, currentPassword, userList);
 
             if (!temp_user.userLogin()) {
                 return false;
+                //return true;
             }
-            return true;
-
+            else {
+                return true;
+            }
         }
         else if (userAction == 2) {
-            cout << "Please create your username!\n";
-            getline(cin, currentUser);
+            cout << "Please create your username!\n";          
+            cin >> currentUser;           
             cout << endl;
-            cout << "Please enter a password for " << currentUser << endl;
-            getline(cin, currentPassword);
+            cout << "Please enter a password for " << currentUser << endl;            
+            cin >> currentPassword;            
             cout << endl;
 
             User temp_user(currentUser, currentPassword, vUsers, vPass);
@@ -126,9 +134,9 @@ bool Wavez::login(){
         }
         else if (userAction == 3) {
             cout << "Please enter the username of the account you wish to delete" << endl;
-            getline(cin, currentUser);
+            cin >> currentUser;  
             cout << "Please enter the password for " << currentUser << endl;
-            getline(cin, currentPassword);
+            cin >> currentPassword;
             cout << endl;
             cout << "Are you sure you want to delete this account? (Y/N)" << endl; //please enter the username one more time
             char userChoice;
@@ -142,12 +150,10 @@ bool Wavez::login(){
                 else
                 {
                     vUsers = temp_user.userRemove().at(0);
-                    vPass = temp_user.userAdd().at(1);
+                    vPass = temp_user.userRemove().at(1);
                     cout << currentUser << "'s Account has been successfully deleted!" << endl;
                     goto login_menu_start;
                 }
-                
-
             }
             else if (tolower(userChoice) == 'n') {
                 cout << "Understood, will not delete this account" << endl;
@@ -163,11 +169,10 @@ bool Wavez::login(){
         }
         else {
             cout << "Incorrect Option, Please try again" << endl;
+            goto login_menu_start;
         }
-
         //break;
     }
-    
     return true;
 }
 
@@ -272,19 +277,20 @@ void Wavez::displayMenu() const{
 void Wavez::offloadLogin(const string & userFile, const string & passFile) {
     ofstream ofs(userFile);
     ofs.open(userFile, ofstream::out | ofstream::trunc);
-
     ofstream ofs_2(passFile);
     ofs.open(passFile, ofstream::out | ofstream::trunc);
-    
+    ofs.close();
+    ofs_2.close();
+
+    ofs.open(userFile);
+    ofs_2.open(passFile);
     for (unsigned i = 0; i < vUsers.size(); ++i) { 
         ofs << vUsers.at(i) << endl;
     }
-
     for (unsigned i = 0; i < vPass.size(); ++i) {
         ofs_2 << vPass.at(i) << endl;
     }
-
-
     ofs.close();
     ofs_2.close();
+    
 }

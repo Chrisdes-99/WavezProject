@@ -24,5 +24,9 @@ void Review::display() const{
     cout << "Review: " << this->body;
 }
 
+string Review::getName(){
+	return this->name;
+}
+
 
 

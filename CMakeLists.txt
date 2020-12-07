@@ -21,14 +21,13 @@ ADD_EXECUTABLE(test
 	tests/unit_test.cpp
 	src/album.cpp
 	src/artist.cpp
-	src/main.cpp
 	src/PasswordManager.cpp
 	src/review.cpp
 	src/song.cpp
 	src/user.cpp
 	src/UsernameManager.cpp
 	src/wavez.cpp
-)
+    )
 
 
 TARGET_LINK_LIBRARIES(test gtest)
