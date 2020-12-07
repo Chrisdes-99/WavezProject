@@ -1,5 +1,8 @@
 #include "../header/wavez.h"
-#include "artist.cpp"
+#include "../header/artist.h"
+#include "../header/review.h"
+#include "../header/song.h"
+#include "../header/album.h"
 
 #include <iostream>
 #include <fstream>
@@ -36,7 +39,9 @@ bool Wavez::loadReviews() {
 
 bool Wavez::loadLogin(const string &userfile, const string &passfile){
     ifstream fin (userfile);
-    ifstream fin_2(passfile);
+    ifstream fin_2 (passfile);
+
+
     if (!fin){
         return false;
     }
@@ -44,6 +49,7 @@ bool Wavez::loadLogin(const string &userfile, const string &passfile){
         return false;
     }
     else{
+
         string currUser;
         string currPass;
         while (fin >> currUser) {

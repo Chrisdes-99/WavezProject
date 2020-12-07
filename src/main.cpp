@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
    cout << "User file?" << endl;
    cin >> userfile;
    cout << endl;
-   string passfile; // = argv[2];
+   string passfile;; // = argv[2];
    cout << "Password file?" << endl;
    cin >> passfile;
    cout << endl;

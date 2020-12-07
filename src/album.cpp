@@ -18,6 +18,6 @@ int Album::getRating(){
 }
 
 vector<Review*> Album::getAlbumReview(){
-	return albumReview();
+	return albumReview;
 }
 

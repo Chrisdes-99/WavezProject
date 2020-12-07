@@ -1,4 +1,6 @@
 #include "../header/artist.h"
+#include "../header/album.h"
+#include "../header/song.h"
 #include <iostream>
 using namespace std;
 
@@ -33,7 +35,7 @@ vector<Album*> Artist::getAlbumVector(){
 	return albumList;
 }
 
-virtual void Artist::addReview(){
+void Artist::addReview(){
 	return;
 }
 
