@@ -19,6 +19,7 @@ class Album:public Artist
 	Album();
 	Album(string nam, int rate);
 	virtual void addReview();
+	vector<Review*> getAlbumReview();
 	int getRating();
 
 };

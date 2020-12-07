@@ -18,6 +18,7 @@ class Song:public Artist
 	Song();
         Song(std::string nam,int rat);
 	virtual void addReview();
+	vector<Review*> getSongReview();
 };
 
 

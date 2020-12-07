@@ -2,25 +2,23 @@
 #define __USERNAMEMANAGER_H__
 
 #include <string>
-/* PURPOSE
--Interacts with usernames.txt
--Usernameverify()
--UsernameAdd()
--UsernameRemove()
--Syncs with index in usernames.txt with index in passwords.txt
-
-*/
+#include <vector>
+using namespace std;
 
 class UsernameManager { 
+ private:
+  string current_user;
+  vector<string> userList;
 
  public:
-   UsernameManager();
+  UsernameManager();
    //pass by ref here to save mem, no new copy
-   UsernameManager(const string& );
+  UsernameManager(const string&, vector<string> &);
 
-   bool UsernameVerify();
-   void UsernameAdd();
-   void UsernameRemove();
+  int userLogin();
+
+  vector<string> userAdd();
+  vector<string> userRemove();
    
 
 

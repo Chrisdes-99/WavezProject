@@ -8,18 +8,9 @@ Song::Song(string nam, int rat){
 	rating = rat;
 }
 
-void Song::addReview(){
-
-  char songReview[100];
- 
-  cout<<"Leave A Review"<<endl;
-
-  std::cin.getline(songReview,100);
-
-  Review* song = new Review(author,this->name,songReview,this->rating);
-
-  songList.push_back(song);
-
-  cout<< "Review for " << this->name << "added!"<< endl;
-
+vector<Review*> Song::getSongReview(){
+	return songReview();
 }
+
+void Song::addReview(){}
+

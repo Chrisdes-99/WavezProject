@@ -2,24 +2,22 @@
 #define __PASSWORDMANAGER_H__
 
 #include <string>
-/* PURPOSE
--Interacts with passwords.txt
--Passwordsverify()
--PasswordsAdd()
--PasswordsRemove()
+#include <vector>
+using namespace std;
 
-*/
-
-
-class Passwordmanager { 
+class PasswordManager { 
+  private:
+    string current_password;
+    vector<string> passList;
 
  public:
    PasswordManager();
-   PasswordManager(const string& );
+   PasswordManager(const string&, vector<string>& );
 
-   bool PasswordVerify();
-   void PasswordAdd();
-   void PasswordRemove();
+   int userLogin();
+
+   vector<string> userAdd();
+   vector<string> userRemove();
 
 };
 
