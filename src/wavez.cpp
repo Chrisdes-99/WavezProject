@@ -148,13 +148,55 @@ void Wavez::run(){
 	    	//implement artist
 	    	addReview();
 	    }
+
 	    else if (choice == 2){
-		//implement album
-		addReview();
-	    }
+
+	    cout<<"Enter an Artist Name:"<<endl;
+    
+            cin >> name;
+
+
+            for(unsigned i=0;i<artistList.size();i++{
+               if(artistList.at(i)->getName() == name){
+                  
+               }
+
+               else{
+                 int rating;
+
+                 cout<<"Enter A Rating"<<endl;
+                 cin>> rating;
+
+                 Artist* newArtist = new Album(name,rating);
+                 newArtist->addReview();
+               }
+            }
+                   
+                                
+            }                                	
+	  
 	    else if (choice == 3){
-		//implement song
-		addReview();
+	     cout<<"Enter a Song Name:"<<endl;
+
+            cin >> name;
+
+
+            for(unsigned i=0;i<artistList.size();i++{
+               if(artistList.at(i)->getName() == name){
+
+               }
+
+               else{
+                 int rating;
+
+                 cout<<"Enter An Rating"<<endl;
+                 cin>> rating;
+
+                 Artist* newArtist = new Song(name,rating);
+                 newArtist->addReview();
+               }
+            }
+    	
 	    }
 	    else{
 		cout << "Not a valid input. Try again." << endl;
