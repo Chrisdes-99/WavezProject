@@ -1,4 +1,6 @@
 #include "../header/UsernameManager.h"
+#include <iostream>
+using namespace std;
 
 UsernameManager::UsernameManager() {
     this->current_user = "";
@@ -18,7 +20,7 @@ int UsernameManager::userLogin() {
         }    
     }
 
-    return 0;
+    return INT_MAX;
 }
 
 vector<string> UsernameManager::userAdd(){
