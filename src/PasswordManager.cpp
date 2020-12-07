@@ -1,4 +1,6 @@
 #include "../header/PasswordManager.h"
+#include <iostream>
+using namespace std;
 
 PasswordManager::PasswordManager() {
     this->current_password = "";
@@ -16,7 +18,7 @@ int PasswordManager::userLogin() {
             return i;
         }
     }
-    return 0;
+    return INT_MIN;
 }
 
 vector<string> PasswordManager::userAdd(){
