@@ -17,10 +17,12 @@ int main(int argc, char *argv[]) {
    //===================LOGIN READ===================
    string userfile; // = argv[1];
    cout << "User file?" << endl;
+   //cin.ignore();
    cin >> userfile;
    cout << endl;
    string passfile;; // = argv[2];
    cout << "Password file?" << endl;
+   //cin.ignore();
    cin >> passfile;
    cout << endl;
 

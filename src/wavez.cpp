@@ -54,9 +54,11 @@ bool Wavez::loadLogin(const string &userfile, const string &passfile){
         string currPass;
         while (fin >> currUser) {
             vUsers.push_back(currUser);
+            cout << "TESTUSERS: " << currUser << endl;
         }
         while (fin_2 >> currPass) {
             vPass.push_back(currPass);
+            cout << "TESTPASS: " << currPass << endl;
         }
 
         if (vUsers.size() < vPass.size()) {
@@ -77,6 +79,7 @@ bool Wavez::loadLogin(const string &userfile, const string &passfile){
         userList.pop_back();
         return true;
 */
+    return true;
     }
 }
 
@@ -99,9 +102,11 @@ bool Wavez::login(){
 
         if (userAction == 1) {
             cout << "Please enter your username!\n";
+            cin.ignore();
             getline(cin, currentUser);
             cout << endl;
             cout << "Now please enter your password!\n";
+            cin.ignore();
             getline(cin, currentPassword);
             cout << endl;
 
@@ -117,9 +122,11 @@ bool Wavez::login(){
         }
         else if (userAction == 2) {
             cout << "Please create your username!\n";
+            cin.ignore();
             getline(cin, currentUser);
             cout << endl;
             cout << "Please enter a password for " << currentUser << endl;
+            cin.ignore();
             getline(cin, currentPassword);
             cout << endl;
 
@@ -132,12 +139,15 @@ bool Wavez::login(){
         }
         else if (userAction == 3) {
             cout << "Please enter the username of the account you wish to delete" << endl;
+            cin.ignore();
             getline(cin, currentUser);
             cout << "Please enter the password for " << currentUser << endl;
+            cin.ignore();
             getline(cin, currentPassword);
             cout << endl;
             cout << "Are you sure you want to delete this account? (Y/N)" << endl; //please enter the username one more time
             char userChoice;
+            cin.ignore();
             cin >> userChoice;
             if (tolower(userChoice) == 'y') {
                 User temp_user(currentUser, currentPassword, vUsers, vPass);
