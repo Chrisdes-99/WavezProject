@@ -12,15 +12,15 @@
 class Song : public Artist{
   private:
 	std::vector<Review*>songReview;
-
 	std::string name;
 	int rating;
+	
   public:
 	Song();
-    	Song(std::string nam,int rat);
+    Song(std::string nam,int rat);
 	virtual void addReview();
 	vector<Review*> getSongReview();
-  string getName();
+  	string getName();
 	int getRating();
 	void setRating(int rat);
 	void addToVector(Review*);
