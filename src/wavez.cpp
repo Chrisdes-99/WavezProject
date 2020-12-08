@@ -233,7 +233,8 @@ void Wavez::run(){
 		//ask user for input
     		string artistName;
     		cout << "Enter name of artist you wish to review: " << endl;
-    		cin >> artistName;
+    		cin.ignore();
+		getline(cin, artistName);
     		cout << "Album(1); Song(2)" << endl;
     		int choice;
     		cin >> choice;
@@ -259,8 +260,9 @@ void Wavez::run(){
         		string albumName;
 
         		cout << "Enter An Album You’d Like to Review: " << endl;
-        		cin >> albumName;
-        		cout << "Give A Rating Out of Five For " << albumName << ": " << endl;
+        		cin.ignore();
+			getline(cin, albumName);
+        		cout << "Give A Rating Out of Five For '" << albumName << "': " << endl;
         		cin >> albumRating;
 
 			//artist was just created, so need to create album object
@@ -299,8 +301,9 @@ void Wavez::run(){
         		string songName;
 
         		cout << "Enter A Song You’d Like to Review: " << endl;
-        		cin >> songName;
-        		cout << "Give A Rating Out of Five For " << songName << ": " << endl;
+			cin.ignore();
+        		getline(cin, songName);
+        		cout << "Give A Rating Out of Five For '" << songName << "': " << endl;
         		cin >> songRating;
 
 			//artist was just created, so need to create song object
