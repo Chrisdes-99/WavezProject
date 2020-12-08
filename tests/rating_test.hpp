@@ -124,7 +124,7 @@ TEST(ArtistTesting, displaySongs) {
     "---------------------------------------------------------\n\n";
     expectedOut +=
     "---------------------------------------------------------";
-    cout << "EXPECTED: " << endl << expectedOut << endl << endl;
+    cout << endl <<  "EXPECTED: " << endl << expectedOut << endl << endl;
     
 
     cout << "ACTUAL: " << endl;
@@ -150,7 +150,7 @@ TEST(ArtistTesting, displayAlbums) {
     "---------------------------------------------------------\n\n";
     expectedOut +=
     "---------------------------------------------------------";
-    cout << "EXPECTED: " << endl << expectedOut << endl << endl;
+    cout << endl << "EXPECTED: " << endl << expectedOut << endl << endl;
     
 
     cout << "ACTUAL: " << endl;
