@@ -44,15 +44,37 @@
  > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
  ## Screenshots
  > Screenshots of the input/output after running your application
+ 
+ - Deleting user accounts, creating user accounts, and logging into Wavez.
+ 
+ ![image](./images/accounts.JPG)
+ 
+ 
+ - Displaying Artist's Album and Song Reviews. Displaying Artist's rating, which is the mean of all album ratings.
+ 
+ ![image](./images/display.PNG)
+ 
+ - Adding Album to an Artist. Displaying multiple Albums and multpile Reviews for one Album. Displaying calculated Artist rating.
+ 
+ ![image](./images/addAlbum.PNG)
+ 
+ - Adding a Song to an Artist. Adding extra Reviews to one Song. Displaying multiple Songs and multiple Reviews for one Song.
+ 
+ ![image](./images/addSong.PNG)
+ 
+ - Searching for an Artist and displaying all their Reviews.
+ 
+ ![image](./images/searchArtist.PNG)
+ 
 ## Installation/Usage
 #### Welcome to Wavez!
-> * To begin installing our program, go ahead and download the files via git clone or manually downloading.
-> * Afterwords, run [cmake .] as well as [make] to compile Wavez from its source code.
-> * This will create an executable, "wavez" where you will execute [./wavez] to begin running Wavez.
-> * You will be prompted with initial questions regarding how you want Wavez to function.
-> * Follow the prompts and proceed to navigate our ease-of-use command-line User Interface!
+ * To begin installing our program, go ahead and download the files via git clone or manually downloading.
+ * Afterwords, run [cmake .] as well as [make] to compile Wavez from its source code.
+ * This will create an executable, "wavez" where you will execute [./wavez] to begin running Wavez.
+ * You will be prompted with initial questions regarding how you want Wavez to function.
+ * Follow the prompts and proceed to navigate our ease-of-use command-line User Interface!
 
 
 ## Testing
 #### GoogleTest
-> - Our project, Wavez, was tested via the implementation of the googletest submodule. Via this implementation, we included multiple test files where we developed tests for many functions in each class. This allows us to see if the functions are functioning to our own liking and allows us to see if any of them are prone to failure. Our tests are located in the folder, "tests/", where there are ".hpp" files that correlate to the general area they test in.
+ - Our project, Wavez, was tested via the implementation of the googletest submodule. Via this implementation, we included multiple test files where we developed tests for many functions in each class. This allows us to see if the functions are functioning to our own liking and allows us to see if any of them are prone to failure. Our tests are located in the folder, "tests/", where there are ".hpp" files that correlate to the general area they test in.
