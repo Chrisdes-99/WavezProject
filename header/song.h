@@ -17,10 +17,11 @@ class Song : public Artist{
 	int rating;
   public:
 	Song();
-    Song(std::string nam,int rat);
+    	Song(std::string nam,int rat);
 	virtual void addReview();
 	vector<Review*> getSongReview();
-    string getName();
+    	string getName();
+	void setRating(int rat);
 };
 
 

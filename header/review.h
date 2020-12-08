@@ -28,5 +28,6 @@ class Review {
 	 */
 	void display() const;	
 	string getName();
+	int getRating();
 };
 #endif

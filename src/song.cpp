@@ -34,3 +34,7 @@ void Song::addReview(){
 string Song::getName() {
     return this->name;
 }
+
+void Song::setRating(int rat){
+	rating = rat;
+}

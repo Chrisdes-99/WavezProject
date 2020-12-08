@@ -28,5 +28,7 @@ string Review::getName(){
 	return this->name;
 }
 
-
+int Review::getRating(){
+	return this->rating;
+}
 

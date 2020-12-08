@@ -13,10 +13,15 @@ Artist::Artist(string nam){
 }
 
 void Artist::setRating(){
-        int sum = 0;
-        int size = albumList.size();
+        double sum = 0;
+        int size = 0;
+	int currRating = 0;
         for (unsigned int i = 0; i < albumList.size(); ++i){
-		sum = sum + albumList.at(i)->getRating();
+                size = size + albumList.at(i)->getAlbumReview().size();
+		for (unsigned int j = 0; j < albumList.at(i)->getAlbumReview().size(); ++j){
+			currRating = albumList.at(i)->getAlbumReview().at(j)->getRating();
+			sum = sum + currRating;
+		}
         }
 	this->rating = (sum/size);
 	return;
@@ -42,12 +47,18 @@ vector<Album*> Artist::getAlbumVector(){
 	return albumList;
 }
 
+double Artist::getRating(){
+	return rating;
+}
+
 void Artist::addReview(){
 	return;
 }
 
 
 void Artist::displaySongs(){
+	if(songList.size() != 0){
+
 	for (unsigned int i = 0; i < songList.size(); ++i){
 		cout << "---------------------------------------------------------" << endl;
 		for(unsigned int j = 0; j < songList.at(i)->getSongReview().size(); ++j){
@@ -60,11 +71,17 @@ void Artist::displaySongs(){
 		cout << endl;
 	}
 	cout << "---------------------------------------------------------" << endl;
+	}
+	else{
+		cout << "No song reviews to display!" << endl << endl;
+	}
 
 }
 
 
 void Artist::displayAlbums(){
+	if (albumList.size() != 0){	
+
 	for (unsigned int i = 0; i < albumList.size(); ++i){
         	cout << "---------------------------------------------------------" << endl;
                 vector<Review*> displayVector = albumList.at(i)->getAlbumReview();
@@ -77,7 +94,10 @@ void Artist::displayAlbums(){
 	        cout << "---------------------------------------------------------" << endl;
         }
         cout << "---------------------------------------------------------" << endl;
+	}
+	else{
+		cout << "No album reviews to display!" << endl << endl;
+	}
 	
-
 }
 

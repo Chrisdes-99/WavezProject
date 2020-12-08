@@ -13,13 +13,14 @@ class Artist{
     std::string Name;
     vector<Song*>songList;
     vector<Album*>albumList;
-    int rating;
+    double rating;
 
  public:
     Artist();
     Artist(string nam);    
     std::string getName();
     void setRating(); //Calculates rating average based on the artist's albums ratings
+    double getRating();
     void displaySongs();
     void displayAlbums();
     virtual void addReview();
