@@ -35,6 +35,9 @@ string Song::getName() {
     return this->name;
 }
 
+int Song::getRating(){
+	return this->rating;
+
 void Song::setRating(int rat){
 	rating = rat;
 }
