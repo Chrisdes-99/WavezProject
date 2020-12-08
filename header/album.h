@@ -21,7 +21,9 @@ class Album:public Artist
 	virtual void addReview();
 	vector<Review*> getAlbumReview();
 	int getRating();
-    	string getName();
+    string getName();
+	void addToVector(Review*);
+
 };
 
 #endif

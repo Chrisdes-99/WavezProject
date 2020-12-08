@@ -45,3 +45,6 @@ vector<Review*> Album::getAlbumReview(){
 	return albumReview;
 }
 
+void Album::addToVector(Review* temp) {
+  albumReview.push_back(temp);
+}
