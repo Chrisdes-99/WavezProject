@@ -36,10 +36,11 @@ string Song::getName() {
 }
 
 int Song::getRating(){
-	return this->rating;
+	  return this->rating;
+}
 
 void Song::setRating(int rat){
-	rating = rat;
+	  this->rating = rat;
 }
 
 void Song::addToVector(Review* temp) {

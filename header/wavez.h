@@ -21,9 +21,7 @@ class Wavez {
  public:
     Wavez();
     Wavez(const string &);
-
     void loadReviews(const string &);
-
     bool loadLogin(const string &, const string &);
     bool login();
     void run();
