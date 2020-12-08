@@ -1,6 +1,7 @@
 #include "gtest/gtest.h"
 #include "login_test.hpp"
 #include "rating_test.hpp"
+#include "review_test.hpp"
 
 
 int main(int argc, char **argv) {
