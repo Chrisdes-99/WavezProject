@@ -1,5 +1,9 @@
 #include "../header/PasswordManager.h"
 #include <iostream>
+#define __STDC_LIMIT_MACROS
+#include <stdint.h>
+#include <limits>
+
 using namespace std;
 
 PasswordManager::PasswordManager() {
@@ -18,7 +22,8 @@ int PasswordManager::userLogin() {
             return i;
         }
     }
-    return INT_MIN;
+   // return INT_MIN;
+   return -2147483648;
 }
 
 vector<string> PasswordManager::userAdd(){
@@ -37,3 +42,5 @@ vector<string> PasswordManager::userRemove(){
 
     
 }
+
+
