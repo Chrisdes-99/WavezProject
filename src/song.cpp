@@ -16,18 +16,19 @@ vector<Review*> Song::getSongReview(){
 
 void Song::addReview(){
 
-     char song_review[100];
+     string song_review;
     
-     cout<<"Leave A Review"<<endl;
+     cout<< "Leave A Review" <<endl;
 
-     std::cin.getline(song_review,100);
+     //cin.clear();
+     getline(cin, song_review);
 
      //Review* song = new Review(author,this->name,song_review,this->rating);
      Review* song = new Review(this->name, song_review, this->rating);
 
      songReview.push_back(song);
 
-     cout<<"Review for " << this->name <<"added!"<<endl;
+     cout<<"Review for " << this->name <<" added!"<<endl;
 }
 
 string Song::getName() {

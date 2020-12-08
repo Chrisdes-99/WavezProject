@@ -229,133 +229,118 @@ void Wavez::run(){
 
 
         else if ((cont == "N") || (cont == "n")){
-            addReview_menu:
-
-            while(true){
-	    cout << "Album(1); Song(2)" << endl;
-	    int choice;
-	    cin >>choice;
-
-	    if(choice == 1){
-               
-             int rating;
-             string albumName; 
-             string artistName;
-
-	     for(unsigned i = 0 ; i<artistList.size(); i++)
-
-  		if(artistList.at(i)->getName() == artistName){
-
-       		Artist* existingArtist = artistList.at(i);
-
-       		cout<< "Enter An Album You’d Like to Review" <<endl;
-       		cin >> albumName;
-
-        
-
-       		for(unsigned j = 0; j < existingArtist->getAlbumVector().size();j++)
-            	if(existingArtist->getAlbumVector().at(i)->getName() == albumName){
-               	existingArtist->addReview();
-            	}
-   
-            	else{
-            
-               	cout<< "Give A Rating For" << albumName <<endl;               
-
-              	Album* album = new Album(albumName,rating);
-              	vector<Album*> tempAlbum = existingArtist->getAlbumVector();
-                tempAlbum.push_back(album);
-              	album->addReview();
-            	}
-       
-  
-  			}		
-  
-
-  		else{
-       		Artist* newArtist = new Artist(artistName);
-
-       		artistList.push_back(newArtist);
-       
-       		cout<< "Enter the Name of the Album"<<endl;
-       		cin>>albumName;
-       
-       		cout<< "Give A Rating Out of Five For "<<albumName<<endl;
-       		cin >> rating;
-
-       		Album* album = new Album(albumName,rating);
-
-       		newArtist->getAlbumVector().push_back(album);
-
-       		album->addReview();
-     		}
-              
-	    }
-
-
-
-
-	    else if (choice == 2){
-	         int rating;
-		 string songName; 
-		 string artistName;
-
-		for(unsigned i = 0 ; i<artistList.size(); i++)
-
-  		   if(artistList.at(i)->getName() == artistName){
-
-       		   Artist *existingArtist = artistList.at(i);
-
-       		   cout<< "Enter The Song You’d Like to Review" <<endl;
-       	           cin >> songName;
-
-       		    for(unsigned j = 0; j<existingArtist->getSongVector().size();j++)
-            		if(existingArtist->getSongVector().at(i)->getName() == songName){
-               		existingArtist->addReview();
-            		}	
-   
-            	   else{
-            
-               	cout<< "Give A Rating For" << songName <<endl;               
-
-              	Song* song = new Song(songName,rating);
-              	existingArtist->getSongVector().push_back(song);
-              	song->addReview();
-            		}	
-       
-  
-  		}
-  
-
-  	        else{
-       		Artist* newArtist = new Artist(artistName);
-
-       		artistList.push_back(newArtist);
-       
-       		cout<< "Enter the Name of the Song"<<endl;
-       		cin>>songName;
-       
-       		cout<< "Give A Rating Out of Five For " << songName << endl;
-       		cin >> rating;
-
-       		Song* song = new Song(songName,rating);
-
-       		newArtist->getSongVector().push_back(song);
-
-       		song->addReview();
-     		}
     	
-	    }
-	    else{
-             cout << "Not a valid input. Try again." << endl;
-              goto addReview_menu;
-	    }
+		//ask user for input
+    		string artistName;
+    		cout << "Enter name of artist you wish to review: " << endl;
+    		cin >> artistName;
+    		cout << "Album(1); Song(2)" << endl;
+    		int choice;
+    		cin >> choice;
 
-          }
-        }
+		//search if artist already exists
+    		Artist* reviewArtist = nullptr;
+    		bool foundArtist = false;
+    		for (unsigned int i = 0; i < artistList.size(); ++i){
+        		if(artistList.at(i)->getName() == artistName){
+            			reviewArtist = artistList.at(i);
+            			foundArtist = true;
+        		}
+    		}
+
+    		if (!foundArtist){
+        		reviewArtist = new Artist(artistName);
+        		artistList.push_back(reviewArtist);
+    		}
+	
+		//handle choices
+    		if(choice == 1){
+        		int albumRating;
+        		string albumName;
+
+        		cout << "Enter An Album You’d Like to Review: " << endl;
+        		cin >> albumName;
+        		cout << "Give A Rating Out of Five For " << albumName << ": " << endl;
+        		cin >> albumRating;
+
+			//artist was just created, so need to create album object
+        		if(!foundArtist){
+            			Album* newAlbum = new Album(albumName, albumRating);
+            			newAlbum->addReview();
+            			reviewArtist->getAlbumVector().push_back(newAlbum);
+        		}
+        		else{
+				//need to search album vector within the artist to see if an instance of the album already exists
+            			bool foundAlbum = false;
+            			Album* album = nullptr;
+            			for(unsigned int j = 0; j < reviewArtist->getAlbumVector().size(); ++j){
+                			if(reviewArtist->getAlbumVector().at(j)->getName() == albumName){
+                    				album = reviewArtist->getAlbumVector().at(j);
+                    				foundAlbum = true;
+                			}
+            			}
+	
+				//if instance of album was found, simply call addreview on it, otherwise create new Album obj, push it to vector, and call addreview on it
+            			if(foundAlbum){
+                			album->addReview();
+            			}
+            			else{
+                			album = new Album(albumName, albumRating);
+                			reviewArtist->getAlbumVector().push_back(album);
+                			album->addReview();
+            			}
+
+        		}	
+    		}
 
 
+    		else if (choice == 2){
+        		int songRating;
+        		string songName;
 
+        		cout << "Enter A Song You’d Like to Review: " << endl;
+        		cin >> songName;
+        		cout << "Give A Rating Out of Five For " << songName << ": " << endl;
+        		cin >> songRating;
+
+			//artist was just created, so need to create song object
+        		if(!foundArtist){
+            			Song* newSong = new Song(songName, songRating);
+            			newSong->addReview();
+            			reviewArtist->getSongVector().push_back(newSong);
+        		}
+        		else{
+				 //need to search song vector within the artist to see if an instance of the song already exists
+            			bool foundSong = false;
+            			Song* song = nullptr;
+            			for(unsigned int j = 0; j < reviewArtist->getSongVector().size(); ++j){
+                			if(reviewArtist->getSongVector().at(j)->getName() == songName){
+                    				song = reviewArtist->getSongVector().at(j);
+                    				foundSong = true;
+                			}
+            			}
+
+				//if instance of song was found, simply call addreview on it, otherwise create new Song obj, push it to vector, and call addreview on it
+            			if(foundSong){
+                			song->addReview();
+            			}
+            			else{
+                			song = new Song(songName, songRating);
+                			reviewArtist->getSongVector().push_back(song);
+                			song->addReview();
+            			}
+        		}
+		}
+    		
+		else{
+        		cout << "Not a valid input. Try again." << endl;
+        	
+    		}
+
+	}	
+
+
+                
 
 	else if ((cont == "S") || (cont == "s")){
 		cout << "Implement search() function" << endl;
