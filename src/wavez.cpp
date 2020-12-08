@@ -291,7 +291,7 @@ void Wavez::run(){
 		}
 		else{
 			string displayChoice;	
-			cout << "Do you want to see a rating (R) or Song reviews (S) or Album reviews (A) for this artist?" << endl;
+			cout << "Do you want to see a rating (R), Song reviews (S), or Album reviews (A) for this artist?" << endl;
 			cin >> displayChoice;
 			if (displayChoice == "S" || displayChoice == "s"){
 				selectedArtist->displaySongs();
@@ -434,7 +434,141 @@ void Wavez::run(){
                 
 
 	else if ((cont == "S") || (cont == "s")){
-		cout << "Implement search() function" << endl;
+		string searchChoice;
+		cout << "Do you want to search for an Artist (1), an Album (2), or a Song (3)?" << endl;
+		cin.ignore();
+		cin >> searchChoice;
+		
+		if (searchChoice == "1"){
+			string artistName;
+			cout << "What Artist are you looking for?" << endl;
+			cin.ignore();
+			getline(cin, artistName);
+
+			Artist* searchArtist = nullptr;
+                	bool foundArtist = false;
+                	for (unsigned int i = 0; i < artistList.size(); ++i){
+                        	if(artistList.at(i)->getName() == artistName){
+                                	searchArtist = artistList.at(i);
+                                	foundArtist = true;
+                        	}
+                	}
+
+                	if (!foundArtist){
+                        	cout << "Artist '" << artistName << "' not found in Wavez!" << endl;
+                	}
+			else{
+				cout << "Artist found! Do you wish to see reviews for " << searchArtist->getName() << "? Y/N" << endl;
+				string artistChoice;
+				getline(cin, artistChoice);
+				
+				if (artistChoice == "Y" || artistChoice == "y"){
+					searchArtist->displayAlbums();
+					searchArtist->displaySongs();
+				}
+				
+			}
+	
+		}
+		else if (searchChoice == "2"){
+			string artistName;
+			cout << "Who is the Artist of the Album you are looking for?" << endl;
+			cin.ignore();
+                        getline(cin, artistName);
+
+                        Artist* searchArtist = nullptr;
+                        bool foundArtist = false;
+                        for (unsigned int i = 0; i < artistList.size(); ++i){
+                                if(artistList.at(i)->getName() == artistName){
+                                        searchArtist = artistList.at(i);
+                                        foundArtist = true;
+                                }
+                        }
+
+                        if (!foundArtist){
+                                cout << "Artist '" << artistName << "' not found in Wavez!" << endl;
+                        }
+                        else{
+                                cout << "What Album are you looking for?" << endl;
+                                string albumSearch;
+                                getline(cin, albumSearch);
+				
+				bool foundAlbum = false;
+				Album* searchAlbum = nullptr;
+				for (unsigned int j = 0; j < searchArtist->getAlbumVector().size(); ++j){
+					if (searchArtist->getAlbumVector().at(j)->getName() == albumSearch){
+						foundAlbum = true;
+						searchAlbum = searchArtist->getAlbumVector().at(j);
+					}
+				}
+
+				if (!foundAlbum){
+					cout << "Album " << albumSearch << " not found!" << endl;
+				}
+				else{
+					cout << "Album found! Do you wish to see reviews for " << searchAlbum->getName() << "? Y/N" << endl;
+					string albumChoice;
+					getline(cin, albumChoice);
+				
+                                	if (albumChoice == "Y" || albumChoice == "y"){
+                                        	for (unsigned int k = 0; k < searchAlbum->getAlbumReview().size(); ++k){
+							searchAlbum->getAlbumReview().at(k)->display();
+						}
+                                	}
+				}
+                        }
+		}
+		else if (searchChoice == "3"){
+			string artistName;
+                        cout << "Who is the Artist of the Song you are looking for?" << endl;
+                        cin.ignore();
+                        getline(cin, artistName);
+
+                        Artist* searchArtist = nullptr;
+                        bool foundArtist = false;
+                        for (unsigned int i = 0; i < artistList.size(); ++i){
+                                if(artistList.at(i)->getName() == artistName){
+                                        searchArtist = artistList.at(i);
+                                        foundArtist = true;
+                                }
+                        }
+
+                        if (!foundArtist){
+				cout << "Artist '" << artistName << "' not found in Wavez!" << endl;                                
+                        }
+                        else{
+                                cout << "What Song are you looking for?" << endl;
+                                string songSearch;
+                                getline(cin, songSearch);
+
+                                bool foundSong = false;
+                                Song* searchSong = nullptr;
+                                for (unsigned int j = 0; j < searchArtist->getSongVector().size(); ++j){
+                                        if (searchArtist->getSongVector().at(j)->getName() == songSearch){
+                                                foundSong = true;
+                                                searchSong = searchArtist->getSongVector().at(j);
+                                        }
+                                }
+
+                                if (!foundSong){
+                                        cout << "Song " << songSearch << " not found!" << endl;
+                                }
+                                else{
+                                        cout << "Song found! Do you wish to see reviews for " << searchSong->getName() << "? Y/N" << endl;
+                                        string songChoice;
+                                        getline(cin, songChoice);
+
+                                        if (songChoice == "Y" || songChoice == "y"){
+                                                for (unsigned int k = 0; k < searchSong->getSongReview().size(); ++k){
+                                                        searchSong->getSongReview().at(k)->display();
+                                                }
+                                        }
+                                }
+                        }
+		}
+		else{
+			cout << "Invalid input." << endl;
+		}
 	}
         else if ((cont == "Q") || (cont == "q")){
             cout << "Goodbye!" << endl;
@@ -444,7 +578,7 @@ void Wavez::run(){
 }
 
 void Wavez::displayMenu() const{
-    cout << "Menu" << endl;
+    cout << "Wavez Menu" << endl;
     cout << "- Display Reviews (\'D\' or \'d\')" << endl;
     cout << "- Add New Review (\'A\' or \'a\')" << endl;
     cout << "- Search (\'S\' or \'s\')" << endl;
