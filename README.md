@@ -65,7 +65,31 @@
  - Searching for an Artist and displaying all their Reviews.
  
  ![image](./images/searchArtist.PNG)
- 
+
+ - Searching for a Song and displaying all their Reviews.
+
+ ![image](./images/songSearch.png)
+
+ - Searching for an Album and displaying all their Reviews.
+
+ ![image](./images/albumSearch.png)
+
+ - Error message when incorrect response to Search
+
+ ![image](./images/searchError.png)
+
+ - Error message when incorrect response to Display
+
+ ![image](./images/displayError.png)
+
+ - Error message when incorrect response to Adding a review
+
+ ![image](./images/addError.png)
+
+ - Invalid Input avoidance in main menu
+
+ ![image](./images/menuError.png)
+
 ## Installation/Usage
 #### Welcome to Wavez!
  * To begin installing our program, go ahead and download the files via git clone or manually downloading.
