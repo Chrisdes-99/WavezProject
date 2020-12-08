@@ -48,6 +48,11 @@
  - Deleting user accounts, creating user accounts, and logging into Wavez.
  
  ![image](./images/accounts.JPG)
+ 
+ 
+ - Displaying Artist's Album and Song Reviews. Displaying Artist's rating, which is the mean of all album ratings.
+ 
+ ![image](./images/display.PNG)
 ## Installation/Usage
 #### Welcome to Wavez!
  * To begin installing our program, go ahead and download the files via git clone or manually downloading.
