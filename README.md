@@ -46,7 +46,7 @@
  > Screenshots of the input/output after running your application
  Deleting user accounts, creating user accounts, and logging into Wavez.
  
- ![image](./images/accounts.jpg)
+ ![image](./images/accounts.JPG)
 ## Installation/Usage
 #### Welcome to Wavez!
 > * To begin installing our program, go ahead and download the files via git clone or manually downloading.
