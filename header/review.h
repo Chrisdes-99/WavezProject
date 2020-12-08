@@ -28,5 +28,6 @@ class Review {
 	 */
 	void display() const;	
 	string getName();
+	string getBody();
 };
 #endif

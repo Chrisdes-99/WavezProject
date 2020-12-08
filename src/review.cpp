@@ -28,5 +28,9 @@ string Review::getName(){
 	return this->name;
 }
 
+string Review::getBody(){
+    return this->body;
+}
+
 
 

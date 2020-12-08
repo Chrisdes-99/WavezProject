@@ -21,6 +21,7 @@ class Song : public Artist{
 	virtual void addReview();
 	vector<Review*> getSongReview();
     string getName();
+	int getRating();
 	void addToVector(Review*);
 };
 
