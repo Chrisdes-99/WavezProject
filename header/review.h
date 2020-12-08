@@ -16,7 +16,7 @@ class Review {
 	// default constructor
 	Review();
 	// Parameterized constructor; 
-	Review(/*const string &athr,*/ const string &body, const string &nme, const int &rat);
+	Review(/*const string &athr,*/ const string &nme, const string &body, const int &rat);
 	
 	/* Displays the Review using the following format:
 	 *

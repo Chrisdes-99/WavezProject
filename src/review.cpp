@@ -10,7 +10,7 @@ Review::Review(){
     rating = -1;
 }
 
-Review::Review(/*const string &athr,*/ const string &body, const string &nme, const int &rat){
+Review::Review(/*const string &athr,*/ const string &nme, const string &body, const int &rat){
     //author = athr;
     name = nme;
     rating = rat;
@@ -18,10 +18,10 @@ Review::Review(/*const string &athr,*/ const string &body, const string &nme, co
 }
 
 void Review::display() const{
-    cout << "Name: " << name << endl;
-    cout << "Rating: " << rating << "/5" << endl;
+  //  cout << "Name: " << name << endl;
+    cout << "	Rating: " << rating << "/5" << endl;
     //cout << "Posted By: " << this->author << endl;
-    cout << "Review: " << this->body;
+    cout << "	Review: " << this->body << endl;
 }
 
 string Review::getName(){

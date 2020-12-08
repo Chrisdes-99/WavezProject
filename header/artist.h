@@ -25,6 +25,9 @@ class Artist{
     virtual void addReview();
     vector<Song*> getSongVector();
     vector<Album*> getAlbumVector();
+    void addSong(Song* newSong);
+    void addAlbum(Album* newAlbum);
+
 };
 
 

@@ -22,6 +22,13 @@ void Artist::setRating(){
 	return;
 }
 
+void Artist::addSong(Song* newSong){
+	songList.push_back(newSong);
+}
+
+void Artist::addAlbum(Album* newAlbum){
+        albumList.push_back(newAlbum);
+}
 
 string Artist::getName(){
 	return Name;
@@ -43,10 +50,9 @@ void Artist::addReview(){
 void Artist::displaySongs(){
 	for (unsigned int i = 0; i < songList.size(); ++i){
 		cout << "---------------------------------------------------------" << endl;
-		vector<Review*> displayVector = songList.at(i)->getSongReview();
-		for(unsigned int j = 0; j < displayVector.size(); ++j){
-	                cout << "Review for " << displayVector.at(j)->getName() << " #" << (j + 1) << ": ";
-	                displayVector.at(j)->display();
+		for(unsigned int j = 0; j < songList.at(i)->getSongReview().size(); ++j){
+	                cout << "Review #" << (j + 1) << " for " << songList.at(i)->getSongReview().at(j)->getName() << ": " << endl;
+	                songList.at(i)->getSongReview().at(j)->display();
 			cout << endl;
 	
 		}
@@ -63,11 +69,11 @@ void Artist::displayAlbums(){
         	cout << "---------------------------------------------------------" << endl;
                 vector<Review*> displayVector = albumList.at(i)->getAlbumReview();
 		for(unsigned int j = 0; j < displayVector.size(); ++j){
-                cout << "Review for " << displayVector.at(j)->getName() << " #" << (j + 1) << ": ";
-                displayVector.at(j)->display();
+                	cout << "Review #" << (j + 1) << " for " << displayVector.at(j)->getName() << ": " << endl;
+                	displayVector.at(j)->display();
+			cout << endl;
 
 		}
-                cout << endl;
 	        cout << "---------------------------------------------------------" << endl;
         }
         cout << "---------------------------------------------------------" << endl;

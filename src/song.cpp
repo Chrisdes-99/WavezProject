@@ -18,7 +18,7 @@ void Song::addReview(){
 
      string song_review;
     
-     cout << "Leave A Review" << endl;
+     cout << "Leave A Review:" << endl;
 
      cin.ignore();
      getline(cin, song_review);
@@ -28,7 +28,7 @@ void Song::addReview(){
 
      songReview.push_back(song);
 
-     cout << "Review for '" << this->name << "' added!"<<endl;
+     cout << "Review for '" << this->name << "' added!"<< endl << endl;
 }
 
 string Song::getName() {

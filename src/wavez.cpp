@@ -213,10 +213,10 @@ void Wavez::run(){
 			string displayChoice;	
 			cout << "Do you want to see Song (S) or Album (A) reviews for this artist?" << endl;
 			cin >> displayChoice;
-			if (displayChoice == "S"){
+			if (displayChoice == "S" || displayChoice == "s"){
 				selectedArtist->displaySongs();
 			}
-			else if (displayChoice == "A"){
+			else if (displayChoice == "A" || displayChoice == "a"){
 				selectedArtist->displayAlbums();
 			}
 			else{
@@ -228,7 +228,7 @@ void Wavez::run(){
 
 
 
-        else if ((cont == "N") || (cont == "n")){
+        else if ((cont == "A") || (cont == "a")){
     	
 		//ask user for input
     		string artistName;
@@ -259,7 +259,7 @@ void Wavez::run(){
         		int albumRating;
         		string albumName;
 
-        		cout << "Enter An Album You’d Like to Review: " << endl;
+        		cout << "Enter An Album You Would Like to Review: " << endl;
         		cin.ignore();
 			getline(cin, albumName);
         		cout << "Give A Rating Out of Five For '" << albumName << "': " << endl;
@@ -268,8 +268,9 @@ void Wavez::run(){
 			//artist was just created, so need to create album object
         		if(!foundArtist){
             			Album* newAlbum = new Album(albumName, albumRating);
-            			newAlbum->addReview();
-            			reviewArtist->getAlbumVector().push_back(newAlbum);
+            			reviewArtist->addAlbum(newAlbum);
+				newAlbum->addReview();
+            			
         		}
         		else{
 				//need to search album vector within the artist to see if an instance of the album already exists
@@ -288,7 +289,7 @@ void Wavez::run(){
             			}
             			else{
                 			album = new Album(albumName, albumRating);
-                			reviewArtist->getAlbumVector().push_back(album);
+                			reviewArtist->addAlbum(album);
                 			album->addReview();
             			}
 
@@ -300,7 +301,7 @@ void Wavez::run(){
         		int songRating;
         		string songName;
 
-        		cout << "Enter A Song You’d Like to Review: " << endl;
+        		cout << "Enter A Song You Would Like to Review: " << endl;
 			cin.ignore();
         		getline(cin, songName);
         		cout << "Give A Rating Out of Five For '" << songName << "': " << endl;
@@ -309,8 +310,9 @@ void Wavez::run(){
 			//artist was just created, so need to create song object
         		if(!foundArtist){
             			Song* newSong = new Song(songName, songRating);
-            			newSong->addReview();
-            			reviewArtist->getSongVector().push_back(newSong);
+            			reviewArtist->addSong(newSong);
+				newSong->addReview();
+            			
         		}
         		else{
 				 //need to search song vector within the artist to see if an instance of the song already exists
@@ -329,7 +331,7 @@ void Wavez::run(){
             			}
             			else{
                 			song = new Song(songName, songRating);
-                			reviewArtist->getSongVector().push_back(song);
+                			reviewArtist->addSong(song);
                 			song->addReview();
             			}
         		}
@@ -349,7 +351,7 @@ void Wavez::run(){
 		cout << "Implement search() function" << endl;
 	}
         else if ((cont == "Q") || (cont == "q")){
-            cout << "Bye!" << endl;
+            cout << "Goodbye!" << endl;
             ++loop;
         }
     }
@@ -357,8 +359,8 @@ void Wavez::run(){
 
 void Wavez::displayMenu() const{
     cout << "Menu" << endl;
-    cout << "- Display All Reviews (\'D\' or \'d\')" << endl;
-    cout << "- Add New Review (\'N\' or \'n\')" << endl;
+    cout << "- Display Reviews (\'D\' or \'d\')" << endl;
+    cout << "- Add New Review (\'A\' or \'a\')" << endl;
     cout << "- Search (\'S\' or \'s\')" << endl;
     cout << "- Quit (\'Q\' or \'q\')" << endl;
 }

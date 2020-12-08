@@ -28,9 +28,10 @@ void Album::addReview(){
   //albumList.push_back(album);
   albumReview.push_back(album);
 
-  cout<< "Review for '" << this->name << "' added!"<< endl;
+  cout<< "Review for '" << this->name << "' added!"<< endl << endl;
 
 }
+
 
 string Album::getName() {
     return this->name;
