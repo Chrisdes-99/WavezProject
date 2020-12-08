@@ -6,4 +6,5 @@ cmake_install.cmake
 test
 main
 
+.DS_Store
 .vscode

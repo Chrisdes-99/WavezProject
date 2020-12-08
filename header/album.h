@@ -23,6 +23,8 @@ class Album:public Artist
 	int getRating();
 	void setRating(int rat);
     	string getName();
+	void addToVector(Review*);
+
 };
 
 #endif

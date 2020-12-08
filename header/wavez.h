@@ -22,7 +22,7 @@ class Wavez {
     Wavez();
     Wavez(const string &);
 
-    void loadReviews();
+    void loadReviews(const string &);
 
     bool loadLogin(const string &, const string &);
     bool login();

@@ -9,14 +9,23 @@ int main(int argc, char *argv[]) {
    Wavez prog("Wavez Program");
 
    //===================REVIEWS READ===================
-   prog.loadReviews();
-
+   int userChoice(0);
+   cout << "Load preset Reviews(1) or blank state?(2)" << endl;
+   cin >> userChoice;
+   if (userChoice == 1) {
+      prog.loadReviews("reviews.txt");
+   }
+   else if (userChoice != 1 && userChoice != 2) {
+      cout << "Incorrect Choice" << endl;
+      return 1;
+   }
    //===================LOGIN READ===================
    string userfile; // = argv[1];
    string passfile;
    cout << "Load default(1) or custom credential database?(2)" << endl;
    int userAction(0);
    cin >> userAction;
+   cout << "AHH" << userAction;
    if (userAction == 1) {
       userfile = "usernames.txt";
       passfile = "passwords.txt";
@@ -41,7 +50,7 @@ int main(int argc, char *argv[]) {
    }
 
    if (!prog.login()) {
-      cout << "Login unsuccessful, now exiting the program" << endl;
+      cout << "Now exiting the program" << endl;
       prog.offloadLogin(userfile, passfile);
       return 1;
    }

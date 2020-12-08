@@ -22,6 +22,7 @@ class Song : public Artist{
 	vector<Review*> getSongReview();
     	string getName();
 	void setRating(int rat);
+	void addToVector(Review*);
 };
 
 
