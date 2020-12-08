@@ -53,6 +53,10 @@
  - Displaying Artist's Album and Song Reviews. Displaying Artist's rating, which is the mean of all album ratings.
  
  ![image](./images/display.PNG)
+ 
+ - Adding Album to an Artist. Displaying multiple Albums and multpile Reviews for one Album. Displaying calculated Artist rating.
+ 
+ ![image](./images/addAlbum.PNG)
 ## Installation/Usage
 #### Welcome to Wavez!
  * To begin installing our program, go ahead and download the files via git clone or manually downloading.
