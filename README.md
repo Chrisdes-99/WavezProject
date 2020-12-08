@@ -57,6 +57,11 @@
  - Adding Album to an Artist. Displaying multiple Albums and multpile Reviews for one Album. Displaying calculated Artist rating.
  
  ![image](./images/addAlbum.PNG)
+ 
+ - Adding a Song to an Artist. Adding extra Reviews to one Song. Displaying multiple Songs and multiple Reviews for one Song.
+ 
+ ![image](./images/addSong.PNG)
+ 
 ## Installation/Usage
 #### Welcome to Wavez!
  * To begin installing our program, go ahead and download the files via git clone or manually downloading.
