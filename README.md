@@ -35,7 +35,7 @@
  
  Composite Pattern (Chris): This pattern is intended for multiple subclasses to use the same functionality for similar uses from a Base Class
   
-  ![image](./images/Composite.png)
+  ![image](./images/Composite_Pattern.png)
  
  > ## Final deliverable
  > All group members will give a demo to the TA during lab time. The TA will check the demo and the project GitHub repository and ask a few questions to all the team members. 
