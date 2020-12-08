@@ -24,6 +24,8 @@ void Artist::setRating(){
 		}
         }
 	this->rating = (sum/size);
+ 	cout << "Rating for " << Name << ": " << this->rating << endl;
+	cout << "Calculated from: " << size << " Album ratings." << endl << endl;
 	return;
 }
 

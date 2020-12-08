@@ -262,9 +262,9 @@ void Wavez::run(){
     int loop = 0;
     while (loop == 0){
         displayMenu();
-        cout << "Choose an action: ";
+        cout << "Choose an option: ";
         cin >> cont;
-        cout << endl;
+	cout << "========================" << endl << endl;
 
         if ((cont == "D") || (cont == "d")){
             if (artistList.size() == 0){
@@ -301,8 +301,7 @@ void Wavez::run(){
 			}
 			else if (displayChoice == "R" || displayChoice == "r"){
 				selectedArtist->setRating();
-				cout << "Rating for " << selectedArtist->getName() << ": " << selectedArtist->getRating() << endl;
-			}
+				}
 			else{
 				cout << "Invalid entry" << endl;
 			}
@@ -463,7 +462,10 @@ void Wavez::run(){
 				getline(cin, artistChoice);
 				
 				if (artistChoice == "Y" || artistChoice == "y"){
+					cout << "Album Reviews: " << endl;
 					searchArtist->displayAlbums();
+					cout << endl;
+					cout << "Song Reviews: " << endl;
 					searchArtist->displaySongs();
 				}
 				
@@ -511,9 +513,14 @@ void Wavez::run(){
 					getline(cin, albumChoice);
 				
                                 	if (albumChoice == "Y" || albumChoice == "y"){
+						cout << "---------------------------------------------------------" << endl;
                                         	for (unsigned int k = 0; k < searchAlbum->getAlbumReview().size(); ++k){
+							cout << "Review #" << (k + 1) << " for " << searchAlbum->getAlbumReview().at(k)->getName() << ": " << endl;
 							searchAlbum->getAlbumReview().at(k)->display();
+							cout << endl;
 						}
+						cout << "---------------------------------------------------------" << endl;
+                				cout << endl;
                                 	}
 				}
                         }
@@ -559,9 +566,14 @@ void Wavez::run(){
                                         getline(cin, songChoice);
 
                                         if (songChoice == "Y" || songChoice == "y"){
+                                                cout << "---------------------------------------------------------" << endl;
                                                 for (unsigned int k = 0; k < searchSong->getSongReview().size(); ++k){
+                                                        cout << "Review #" << (k + 1) << " for " << searchSong->getSongReview().at(k)->getName() << ": " << endl;
                                                         searchSong->getSongReview().at(k)->display();
+                                                        cout << endl;
                                                 }
+                                                cout << "---------------------------------------------------------" << endl;
+                                                cout << endl;
                                         }
                                 }
                         }
@@ -578,11 +590,16 @@ void Wavez::run(){
 }
 
 void Wavez::displayMenu() const{
-    cout << "Wavez Menu" << endl;
-    cout << "- Display Reviews (\'D\' or \'d\')" << endl;
-    cout << "- Add New Review (\'A\' or \'a\')" << endl;
-    cout << "- Search (\'S\' or \'s\')" << endl;
-    cout << "- Quit (\'Q\' or \'q\')" << endl;
+    cout << "======Wavez Menu======" << endl;
+    cout << "=================================================" << endl;
+    cout << "Display Available Reviews: ENTER 'D\' OR \'d\'" << endl;
+    cout << "=================================================" << endl;
+    cout << "Add A New Review: ENTER \'A\' OR \'a\'" << endl;
+    cout << "=================================================" << endl;
+    cout << "Make A Search: ENTER \'S\' OR \'s\'" << endl;
+    cout << "=================================================" << endl;
+    cout << "Quit Wavez: ENTER \'Q\' OR \'q\'" << endl;
+    cout << "=================================================" << endl;
 }
 
 void Wavez::offloadLogin(const string & userFile, const string & passFile) {

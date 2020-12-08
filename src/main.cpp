@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
    cout << "Load default(1) or custom credential database?(2)" << endl;
    int userAction(0);
    cin >> userAction;
-   cout << "AHH" << userAction;
+//   cout << "AHH" << userAction;
    if (userAction == 1) {
       userfile = "usernames.txt";
       passfile = "passwords.txt";
