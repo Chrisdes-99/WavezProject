@@ -36,12 +36,7 @@
  Composite Pattern (Chris): This pattern is intended for multiple subclasses to use the same functionality for similar uses from a Base Class
   
   ![image](./images/Composite_Pattern.png)
- 
- > ## Final deliverable
- > All group members will give a demo to the TA during lab time. The TA will check the demo and the project GitHub repository and ask a few questions to all the team members. 
- > Before the demo, you should do the following:
- > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
- > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
+  
  ## Screenshots
  > Screenshots of the input/output after running your application
  
@@ -93,7 +88,7 @@
 ## Installation/Usage
 #### Welcome to Wavez!
  * To begin installing our program, go ahead and download the files via git clone or manually downloading.
- * Afterwords, run [cmake .] as well as [make] to compile Wavez from its source code.
+ * Afterwards, run [cmake .] as well as [make] to compile Wavez from its source code.
  * This will create an executable, "wavez" where you will execute [./wavez] to begin running Wavez.
  * You will be prompted with initial questions regarding how you want Wavez to function.
  * Follow the prompts and proceed to navigate our ease-of-use command-line User Interface!
