@@ -37,15 +37,6 @@
   
   ![image](./images/Composite.png)
  
- > ## Phase III
- > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
- > * Before the meeting you should perform a sprint plan like you did in Phase II
- > * In the meeting with your TA you will discuss: 
- >   - How effective your last sprint was (each member should talk about what they did)
- >   - Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- >   - Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- >   - What tasks you are planning for this next sprint.
-
  > ## Final deliverable
  > All group members will give a demo to the TA during lab time. The TA will check the demo and the project GitHub repository and ask a few questions to all the team members. 
  > Before the demo, you should do the following:
@@ -53,8 +44,15 @@
  > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
  ## Screenshots
  > Screenshots of the input/output after running your application
- ## Installation/Usage
- > Instructions on installing and running your application
- ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
- 
+## Installation/Usage
+#### Welcome to Wavez!
+> * To begin installing our program, go ahead and download the files via git clone or manually downloading.
+> * Afterwords, run [cmake .] as well as [make] to compile Wavez from its source code.
+> * This will create an executable, "wavez" where you will execute [./wavez] to begin running Wavez.
+> * You will be prompted with initial questions regarding how you want Wavez to function.
+> * Follow the prompts and proceed to navigate our ease-of-use command-line User Interface!
+
+
+## Testing
+#### GoogleTest
+> - Our project, Wavez, was tested via the implementation of the googletest submodule. Via this implementation, we included multiple test files where we developed tests for many functions in each class. This allows us to see if the functions are functioning to our own liking and allows us to see if any of them are prone to failure. Our tests are located in the folder, "tests/", where there are ".hpp" files that correlate to the general area they test in.
