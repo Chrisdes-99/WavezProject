@@ -62,6 +62,10 @@
  
  ![image](./images/addSong.PNG)
  
+ - Searching for an Artist and displaying all their Reviews.
+ 
+ ![image](./images/searchArtist.PNG)
+ 
 ## Installation/Usage
 #### Welcome to Wavez!
  * To begin installing our program, go ahead and download the files via git clone or manually downloading.
