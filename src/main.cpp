@@ -9,10 +9,7 @@ int main(int argc, char *argv[]) {
    Wavez prog("Wavez Program");
 
    //===================REVIEWS READ===================
-   if (!prog.loadReviews()) {
-      cout << "Error loading reviews from " << ", exiting." << endl;
-      return 1;
-   }
+   prog.loadReviews();
 
    //===================LOGIN READ===================
    string userfile; // = argv[1];
