@@ -319,7 +319,7 @@ void Wavez::run(){
     		cin.ignore();
             getline(cin, artistName);
     		cout << "Album(1); Song(2)" << endl;
-    		int choice;
+    		string choice;
     		cin >> choice;
 
 		//search if artist already exists
@@ -338,7 +338,7 @@ void Wavez::run(){
     		}
 	
 		//handle choices
-    		if(choice == 1){
+    		if(choice == "1"){
         		int albumRating;
         		string albumName;
 
@@ -381,7 +381,7 @@ void Wavez::run(){
     		}
 
 
-    		else if (choice == 2){
+    		else if (choice == "2"){
         		int songRating;
         		string songName;
 
