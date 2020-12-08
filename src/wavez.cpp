@@ -21,18 +21,69 @@ Wavez::Wavez(const string &ttle){
     User def();
 }
 
-bool Wavez::loadReviews() {
- //FORMAT:
- //
- //
- //
- //   ifstream infs(reviewFile);
- //   if (!infs) {
- //       return false;
- //   }
- //   else {
- //   }
- return true;
+void Wavez::loadReviews() {
+    string artistName("");
+    int albumRating(0);
+    string albumName("");
+    int songRating(0);
+    string songName("");
+
+    Artist* temp_Artist = nullptr;
+    Album* temp_Album = nullptr;
+    Song* temp_Song = nullptr;
+
+    //Kanye
+    temp_Artist = new Artist("Kanye West");
+    artistList.push_back(temp_Artist);
+    //album - life of pablo
+    albumName = "Life of Pablo";
+    albumRating = 4;
+    temp_Album = new Album(albumName, albumRating);
+    temp_Artist->getAlbumVector().push_back(temp_Album);
+    //song - wolves
+    songName = "Wolves";
+    songRating = 5;
+    temp_Song = new Song(songName, songRating);
+    temp_Artist->getSongVector().push_back(temp_Song);
+    //song - Famous
+    songName = "Famous";
+    songRating = 4;
+    temp_Song = new Song(songName, songRating);
+    temp_Artist->getSongVector().push_back(temp_Song);
+    //song - Champion
+    songName = "Champion";
+    songRating = 4;
+    temp_Song = new Song(songName, songRating);
+    temp_Artist->getSongVector().push_back(temp_Song);
+
+    //kendrick
+    temp_Artist = new Artist("Kendrick Lamar");
+    artistList.push_back(temp_Artist);
+    //album - DAMN
+    albumName = "DAMN";
+    albumRating = 4;
+    temp_Album = new Album(albumName, albumRating);
+    temp_Artist->getAlbumVector().push_back(temp_Album);
+    //song - element
+    songName = "Element";
+    songRating = 5;
+    temp_Song = new Song(songName, songRating);
+    temp_Artist->getSongVector().push_back(temp_Song);
+    //song - Humble
+    songName = "Humble";
+    songRating = 4;
+    temp_Song = new Song(songName, songRating);
+    temp_Artist->getSongVector().push_back(temp_Song);
+    //song - DNA
+    songName = "DNA";
+    songRating = 5;
+    temp_Song = new Song(songName, songRating);
+    temp_Artist->getSongVector().push_back(temp_Song);
+    //song - DNA
+    songName = "Love";
+    songRating = 5;
+    temp_Song = new Song(songName, songRating);
+    temp_Artist->getSongVector().push_back(temp_Song);
 
 }
 
@@ -234,7 +285,7 @@ void Wavez::run(){
     		string artistName;
     		cout << "Enter name of artist you wish to review: " << endl;
     		cin.ignore();
-		getline(cin, artistName);
+            getline(cin, artistName);
     		cout << "Album(1); Song(2)" << endl;
     		int choice;
     		cin >> choice;
