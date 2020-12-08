@@ -34,3 +34,7 @@ void Song::addReview(){
 string Song::getName() {
     return this->name;
 }
+
+void Song::addToVector(Review* temp) {
+  songReview.push_back(temp);
+}

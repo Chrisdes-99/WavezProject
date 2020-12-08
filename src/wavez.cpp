@@ -7,21 +7,22 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <sstream>
 using namespace std;
 
 string name;
 
 Wavez::Wavez(){
     title = "No Title";
-    User def();
+    //User def();
 }
 
 Wavez::Wavez(const string &ttle){
     title = ttle;
-    User def();
+    //User def();
 }
 
-void Wavez::loadReviews() {
+void Wavez::loadReviews(const string& loadFile) {
     string artistName("");
     int albumRating(0);
     string albumName("");
@@ -31,6 +32,8 @@ void Wavez::loadReviews() {
     Artist* temp_Artist = nullptr;
     Album* temp_Album = nullptr;
     Song* temp_Song = nullptr;
+    Review* album = nullptr;
+    Review* song = nullptr;
 
     //Kanye
     temp_Artist = new Artist("Kanye West");
@@ -39,22 +42,33 @@ void Wavez::loadReviews() {
     albumName = "Life of Pablo";
     albumRating = 4;
     temp_Album = new Album(albumName, albumRating);
-    temp_Artist->getAlbumVector().push_back(temp_Album);
+    temp_Artist->addAlbum(temp_Album);
+    album = new Review(albumName, "This album was really something else!", albumRating);
+    temp_Album->addToVector(album);
+
     //song - wolves
     songName = "Wolves";
     songRating = 5;
     temp_Song = new Song(songName, songRating);
-    temp_Artist->getSongVector().push_back(temp_Song);
+    temp_Artist->addSong(temp_Song);
+    song = new Review(songName, "I love the instrumentals of this song!!", songRating);
+    temp_Song->addToVector(song);
+
     //song - Famous
     songName = "Famous";
     songRating = 4;
     temp_Song = new Song(songName, songRating);
-    temp_Artist->getSongVector().push_back(temp_Song);
+    temp_Artist->addSong(temp_Song);
+    song = new Review(songName, "It has such a catchy beat that Kanye does best", songRating);
+    temp_Song->addToVector(song);
+
     //song - Champion
     songName = "Champion";
     songRating = 4;
     temp_Song = new Song(songName, songRating);
-    temp_Artist->getSongVector().push_back(temp_Song);
+    temp_Artist->addSong(temp_Song);
+    song = new Review(songName, "Such a good song and sampling from Kanye", songRating);
+    temp_Song->addToVector(song);
 
     //kendrick
     temp_Artist = new Artist("Kendrick Lamar");
@@ -63,27 +77,42 @@ void Wavez::loadReviews() {
     albumName = "DAMN";
     albumRating = 4;
     temp_Album = new Album(albumName, albumRating);
-    temp_Artist->getAlbumVector().push_back(temp_Album);
+    temp_Artist->addAlbum(temp_Album);
+    album = new Review(albumName, "True masterpiece of an Album", albumRating);
+    temp_Album->addToVector(album);
+
     //song - element
     songName = "Element";
     songRating = 5;
     temp_Song = new Song(songName, songRating);
-    temp_Artist->getSongVector().push_back(temp_Song);
+    temp_Artist->addSong(temp_Song);
+    song = new Review(songName, "Such a great song to get you hyped up", songRating);
+    temp_Song->addToVector(song);
+
     //song - Humble
     songName = "Humble";
     songRating = 4;
     temp_Song = new Song(songName, songRating);
-    temp_Artist->getSongVector().push_back(temp_Song);
+    temp_Artist->addSong(temp_Song);
+    song = new Review(songName, "Amazing song from Kendrick", songRating);
+    temp_Song->addToVector(song);
+
     //song - DNA
     songName = "DNA";
     songRating = 5;
     temp_Song = new Song(songName, songRating);
-    temp_Artist->getSongVector().push_back(temp_Song);
+    temp_Artist->addSong(temp_Song);
+    song = new Review(songName, "Such an amazing song that resonates with you", songRating);
+    temp_Song->addToVector(song);
+
     //song - DNA
     songName = "Love";
     songRating = 5;
     temp_Song = new Song(songName, songRating);
-    temp_Artist->getSongVector().push_back(temp_Song);
+    temp_Artist->addSong(temp_Song);
+    song = new Review(songName, "I never knew Kendrick could go to these levels, AMAZING!", songRating);
+    temp_Song->addToVector(song);
+
 
 }
 
