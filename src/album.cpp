@@ -32,6 +32,9 @@ void Album::addReview(){
 
 }
 
+void Album::setRating(int rat){
+	rating = rat;
+}
 
 string Album::getName() {
     return this->name;

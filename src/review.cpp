@@ -27,10 +27,11 @@ void Review::display() const{
 string Review::getName(){
 	return this->name;
 }
-
 string Review::getBody(){
     return this->body;
 }
 
-
+int Review::getRating(){
+	return this->rating;
+}
 

@@ -273,7 +273,7 @@ void Wavez::run(){
             }
             else{
 		string artistName;
-		cout << "Which artist would you like to see reviews for?" << endl;
+		cout << "Which artist would you like to see reviews or a rating for?" << endl;
 		cin.ignore();
 		getline(cin,artistName);
 		cout << endl;
@@ -291,13 +291,17 @@ void Wavez::run(){
 		}
 		else{
 			string displayChoice;	
-			cout << "Do you want to see Song (S) or Album (A) reviews for this artist?" << endl;
+			cout << "Do you want to see a rating (R) or Song reviews (S) or Album reviews (A) for this artist?" << endl;
 			cin >> displayChoice;
 			if (displayChoice == "S" || displayChoice == "s"){
 				selectedArtist->displaySongs();
 			}
 			else if (displayChoice == "A" || displayChoice == "a"){
 				selectedArtist->displayAlbums();
+			}
+			else if (displayChoice == "R" || displayChoice == "r"){
+				selectedArtist->setRating();
+				cout << "Rating for " << selectedArtist->getName() << ": " << selectedArtist->getRating() << endl;
 			}
 			else{
 				cout << "Invalid entry" << endl;
@@ -365,6 +369,7 @@ void Wavez::run(){
 	
 				//if instance of album was found, simply call addreview on it, otherwise create new Album obj, push it to vector, and call addreview on it
             			if(foundAlbum){
+					album->setRating(albumRating);
                 			album->addReview();
             			}
             			else{
@@ -407,6 +412,7 @@ void Wavez::run(){
 
 				//if instance of song was found, simply call addreview on it, otherwise create new Song obj, push it to vector, and call addreview on it
             			if(foundSong){
+					song->setRating(songRating);
                 			song->addReview();
             			}
             			else{
