@@ -5,6 +5,6 @@ cmake_install.cmake
 /lib
 test
 main
-
+wavez
 .DS_Store
 .vscode
