@@ -1,4 +1,5 @@
 #include "../header/album.h"
+#include <iostream>
 using namespace std;
 
 Album::Album(){
@@ -19,12 +20,19 @@ void Album::addReview(){
   
   std::cin.getline(album_review,100);
  
-  Review* album = new Review(author,this->name,album_review,this->rating);
+  //Review* album = new Review(author,this->name,album_review,this->rating);
 
-  albumList.push_back(album);
+  Review* album = new Review(this->name, album_review, this->rating);
+
+  //albumList.push_back(album);
+  albumReview.push_back(album);
 
   cout<< "Review for" << this->name << "added!"<< endl;
 
+}
+
+string Album::getName() {
+    return this->name;
 }
 
 int Album::getRating(){
