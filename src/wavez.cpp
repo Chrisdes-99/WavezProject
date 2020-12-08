@@ -251,8 +251,10 @@ void Wavez::run(){
        		cout<< "Enter An Album You’d Like to Review" <<endl;
        		cin >> albumName;
 
-       		for(unsigned j = 0; j<existingArtist.getAlbumVector().size();j++)
-            	if(existingArtist.getAlbumVector.at(i) == albumName){
+        
+
+       		for(unsigned j = 0; j < existingArtist->getAlbumVector().size();j++)
+            	if(existingArtist->getAlbumVector().at(i)->getName() == albumName){
                	existingArtist->addReview();
             	}
    
@@ -260,8 +262,9 @@ void Wavez::run(){
             
                	cout<< "Give A Rating For" << albumName <<endl;               
 
-              	Artist* album = new Album(albumName,rating);
-              	existingArtist.getAlbumVector.push_back(album);
+              	Album* album = new Album(albumName,rating);
+              	vector<Album*> tempAlbum = existingArtist->getAlbumVector();
+                tempAlbum.push_back(album);
               	album->addReview();
             	}
        
@@ -280,9 +283,9 @@ void Wavez::run(){
        		cout<< "Give A Rating Out of Five For "<<albumName<<endl;
        		cin >> rating;
 
-       		Artist* album = new Album(albumName,rating);
+       		Album* album = new Album(albumName,rating);
 
-       		newArtist.getAlbumVector().push_back(album);
+       		newArtist->getAlbumVector().push_back(album);
 
        		album->addReview();
      		}
@@ -306,8 +309,8 @@ void Wavez::run(){
        		   cout<< "Enter The Song You’d Like to Review" <<endl;
        	           cin >> songName;
 
-       		    for(unsigned j = 0; j<existingArtist.getSongVector().size();j++)
-            		if(existingArtist.getSongVector.at(i) == songName){
+       		    for(unsigned j = 0; j<existingArtist->getSongVector().size();j++)
+            		if(existingArtist->getSongVector().at(i)->getName() == songName){
                		existingArtist->addReview();
             		}	
    
@@ -315,8 +318,8 @@ void Wavez::run(){
             
                	cout<< "Give A Rating For" << songName <<endl;               
 
-              	Artist* song = new Song(songName,rating);
-              	existingArtist.getSongVector.push_back(song);
+              	Song* song = new Song(songName,rating);
+              	existingArtist->getSongVector().push_back(song);
               	song->addReview();
             		}	
        
@@ -335,9 +338,9 @@ void Wavez::run(){
        		cout<< "Give A Rating Out of Five For " << songName << endl;
        		cin >> rating;
 
-       		Artist* song = new Song(songName,rating);
+       		Song* song = new Song(songName,rating);
 
-       		newArtist.getSongVector().push_back(song);
+       		newArtist->getSongVector().push_back(song);
 
        		song->addReview();
      		}

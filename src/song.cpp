@@ -1,5 +1,6 @@
 #include "../header/song.h"
 //#include "../header/artist.h"
+#include <iostream>
 using namespace std;
 
 Song::Song(){}
@@ -21,10 +22,14 @@ void Song::addReview(){
 
      std::cin.getline(song_review,100);
 
-     Review* song = new Review(author,this->name,song_review,this->rating);
+     //Review* song = new Review(author,this->name,song_review,this->rating);
+     Review* song = new Review(this->name, song_review, this->rating);
 
      songReview.push_back(song);
 
      cout<<"Review for " << this->name <<"added!"<<endl;
 }
 
+string Song::getName() {
+    return this->name;
+}
